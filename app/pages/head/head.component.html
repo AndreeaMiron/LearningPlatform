@@ -1,0 +1,162 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center',
+height:'390%'
+}" >
+
+<br>
+  <div class="stanga">
+    <div class="topdiv"><p class="etichete">< Head ></p></div>
+    <p class="p2"> Elementul <span> < head > </span> este un tag care contine <span>metadate</span> * date despre alte date *, adica date despre document, si este situat intre tagurile < html > si < body >.
+      Elementele aflate intre acest tag nu sunt afisate pe ecran.</p>
+    <br>
+    <p class="p2"> Metadatele practic contin informatii despre titlu, setul de caractere, stilizare, linkuri, etc.</p>
+
+  </div>
+
+
+  <div class="dreapta">
+    <div class="topdiv2"><p class="etichete">< Title ></p></div>
+    <p class="p2">Aceasta eticheta reprezinta titlul paginii si este necesara in orice pagina html, deoarece:</p>
+    <ol class="pasi">
+      <li>Defineste un titlu in browserul web</li>
+      <br>
+      <li>Furnizeaza un titlu pentru pagina cand aceasta este adaugata la paginile favorite</li>
+     <br>
+      <li>Afiseaza un titlu pentru pagina in urma rezultatelor motorului de cautare</li>
+    </ol>
+
+  </div>
+
+
+  <div id="id1">
+    <div id="top1">
+      <p class="etichete" style="margin-top: 20px;">< Style ></p>
+      <p class="p2">1.<span>< style ></span> este folosit pentru a defini informatii de stilizare a unei pagini web, de exemplu:</p>
+      <br>
+      <p class="p2">Astfel, pagina va avea fundalul albastru, paragrafele vor avea scrisul de culoarea mov, respectiv roz pentru head-uri.</p><br>
+    </div>
+  </div>
+
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;">< Link ></p>
+    </div>
+
+    <p class="p2">2.<span>< link ></span> este folosit pentru a face legatura cu alte foi, de stil extern.</p>
+
+  </div>
+
+  <div id="id3">
+    <div  id="top3">
+      <p class="etichete" style="margin-top: 20px;">< Meta ></p>
+    </div>
+    <p class="p2">3.<span>< meta ></span> este utilizat pentru a specifica setul de caractere folosit, cuvinte cheie, autor si alte date. Sunt utilizate de browsere, motoarele de cautare si de alte servicii web.</p>
+  </div>
+
+  <img id="sageti" src="assets/sageti.gif">
+  <img src="assets/p2.png" style="margin-left:-800px;height:200px;width:400px">
+  <img src="assets/p4.png" style="margin-left:450px;margin-top: -400px;">
+  <br><br>
+  <img src="assets/p3.png" style="margin-left:400px;height:100px;width:600px">
+
+
+  <br><br><br><br>
+  <table id="t1">
+    <tr>	<th>Atribut</th>
+      <th>Valori</th>
+      <th>Descriere</th>
+    </tr>
+    <tr>	<td>href</td>
+      <td>URL</td>
+      <td>Specifica locatia documentului conectat</td>
+    </tr>
+    <tr>	<td>rel</td>
+      <td>stylesheet/alternate/search/icon/license</td>
+      <td>Specifica relatia dintre documentul curent si cel cu care face legatura</td>
+    </tr>
+    <tr>	<td>type</td>
+      <td>media_type</td>
+      <td>Specifica tipul de suport al documentului conectat,ex. html/css</td>
+    </tr>
+    <tr>	<td>target</td>
+      <td>	_blank/_self/_top/_parent</td>
+      <td>Specifica unde va fi incarcat documentul conectat</td>
+    </tr>
+  </table><br>
+
+
+ <div id="meta" >
+    <div id="metaIcon" *ngIf="metaIcon">
+      <mat-icon style=" margin-top: 10px;margin-left: 500px;">mobile_friendly</mat-icon>
+      <button style="margin-left: 1000px;margin-top: -100px;" (click)="metaFunction()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+
+    </div>
+    <div id="display" *ngIf="meta"><p class="p2">HTML5 a introdus o metodă de a permite designerilor web să preia controlul asupra ferestrei de vizualizare, prin eticheta < meta >.
+      Fereastra de vizualizare reprezinta zona vizibila a utilizatorilor unei pagini web. Aceasta variaza in functie de dispozitivul pe care il folosim, astfel
+      aceasta va fi mai mica la folosirea unui smartphone si mai mare la vizionarea prin intermediul unui calculator. Prin urmare, ar trebui sa includeti la fiecare
+      pagina web urmatoarea eticheta cu atributele:</p>
+    <p class="p2"><span>< meta name="viewport" content="width=device-width, initial-scale=1.0" ></span></p>
+    <p class="p2"> Cu aceasta eticheta, browserul va primi instructiuni despre cum sa controleze dimensiunile paginii.</p>
+    <p class="p2">
+      Partea <span>"width=device-width"</span>->stabilește lățimea paginii, pentru a urmări lățimea ecranului dispozitivului (care va varia în funcție de dispozitiv)<br>
+      Partea <span>"initial-scale=1.0"</span>->stabileste nivelul initial de marire cand prima pagina e incarcata de browser</p>
+      <img src="assets/viewport.png" width="400px"height="300px" style="margin-left:600px;margin-top: -1000px;" >
+  </div>
+ </div>
+
+
+  <div id="script">
+    <div id="scriptIcon" *ngIf="scriptIcon">
+      <p class="etichete" style="margin-top: 20px;">< Script ></p>
+      <button style="margin-left: 1000px;margin-top: -100px;" (click)="scriptFunction()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+    </div>
+    <div *ngIf="script">
+      <p class="p2"> Aceasta eticheta se foloseste pentru a defini Java-Script-uri.Aveti mai jos un astfel de exemplu:</p>
+      <br>
+      <img src="assets/p5.png" width="600px"height="300px" style="margin-left:200px;" >
+      <p class="p2">Dupa cum puteti vedea, in urma apasarii pe buton, textul din interiorul etichetei < p > s-a schimbat.</p>
+      <p id="js">Cand apesi pe buton o sa ma transform in "Butonul a fost apasat".</p>
+      <button type="button" (click)="myFunction()">Apasa aici!</button>
+    </div>
+  </div>
+
+
+  <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+    <button (click)="scrollToTop()">
+      <i class="fa fa-chevron-up"></i>
+      <mat-icon>keyboard_capslock</mat-icon>
+    </button>
+  </div>
+
+</div>
+
+  <mat-toolbar color=white *ngIf="userLoggedIn">
+    <button mat-icon-button  aria-label="Buton tutorial" (click)="tutorial()">
+      <img src="assets/html.png" style="margin-left:1300px;width:80px;height:60px;">
+    </button>
+
+  </mat-toolbar>

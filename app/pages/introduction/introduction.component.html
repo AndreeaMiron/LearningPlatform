@@ -1,0 +1,93 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer" aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Butonquiz" (click)="quiz()">
+   <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center',
+height:'140%'
+}" >
+
+  <div class="centru">
+    <div class="topdivc"> <h1>Ce este html?</h1></div>
+
+  <p class="p2">
+    <br>
+    HTML este un limbaj de creare a paginilor web. Aceasta prescurtare vine de la <span>Hyper Text Markup Language</span>.
+   </p>
+    <p class="p2">
+    Elementele html sunt reprezentate prin
+    <span>taguri</span>, de exemplu < p >, < title >, etc., aceste taguri nefiind afisate pe pagina,ci <span>se afiseaza doar continutul lor</span>.
+    </p>
+    <p class="p2">
+    Tagurile sunt de doua feluri: de <span>deschidere</span> si de <span>inchidere</span>, astfel daca deschideti un tag, de exemplu < p > ,acesta trebuie si inchis cu < / p >.
+    </p>
+    <p class="p2">
+    Exista si <span>taguri libere</span>, acestea fiind cele care nu au un continut, deci nu trebuie inchise, de exemplu < br >, care defineste o linie de pauza sau < hr > care
+    delimiteaza imagini, texte etc. printr-o linie orizontala.
+    </p>
+  </div>
+
+
+  <img src="assets/p1.png" style="margin:100px;width:400px;height:300px;">
+
+
+  <div class="stanga">
+    <div class="topdiv"><img id="icon" src="assets/htmlicon.jpg" ></div>
+
+  <ol >
+    <li>Declararea <span>< !DOCTYPE html > </span> defineste documentul ca fiind de tip HTML5 si ajuta browserele sa afiseze pagina corect
+      -HTML5 reprezinta ultima versiune html ( 2004 )</li><br>
+    <li>Elementul <span>< html > </span> este elementul de baza (radacina) unei pagini HTML</li>
+    <li>Tagul <span>< head ></span> contine diferite informatii despre pagina</li>
+    <li>Tagul <span>< title ></span> reprezinta titlul paginii</li>
+    <li>Tagul <span>< body ></span> reprezinta continutul vizibil al paginii</li>
+    <li>Tagul <span>< h1 ></span> defineste cea mai mare rubrica</li>
+    <li>Tagul <span>< p > </span> defineste un paragraf</li>
+  </ol>
+  </div>
+
+  <div class="dreapta">
+    <div class="topdiv2"><img id="creation" src="assets/creation.jpg" ></div>
+    <h2>Cum creezi o pagina web?</h2>
+    <p class="p2" >In primul rand trebuie sa folosesti un editor de texte, apoi sa urmezi acesti pasi simpli:</p>
+    <ol>
+      <li>Deschide editorul de texte pe care vrei sa-l folosesti</li>
+      <li>Foloseste tagurile invatate mai sus si exemplul din imagine pentru a scrie in html</li>
+      <li>Salveaza pagina ca "index.html", verifica ca tipul fisierului sa fie "all types" sau "html,htm,.." si seteaza codarea de tip UTF-8</li>
+      <li>Vizualizeaza pagina dand dublu click pe fisier, apoi alege browserul cu care doresti sa-l deschizi</li>
+    </ol>
+  </div>
+<!--
+  <p class="p2">Conform ultimei versiuni HTML5, etichetele < html >, < body > si < head > pot fi omise, insa este recomandabil sa le folositi pentru a va
+    delimita si imparti pagina corespunzator.</p>
+  <hr><hr>
+
+
+-->
+</div>
+
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <button mat-icon-button  aria-label="Buton tutorial" (click)="tutorial()">
+    <img src="assets/html.png" style="margin-left:1300px;width:80px;height:60px;">
+  </button>
+
+</mat-toolbar>
+
+
+
+
+

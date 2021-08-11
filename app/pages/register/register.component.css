@@ -1,0 +1,11 @@
+div{
+  position: relative;
+  top:50px;
+  left:650px;
+}
+mat-card{
+  max-width:200px;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

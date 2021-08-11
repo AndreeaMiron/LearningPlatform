@@ -1,0 +1,8 @@
+div{
+  position: relative;
+  top:250px;
+  left:650px;
+}
+mat-card{
+  max-width:200px;
+}

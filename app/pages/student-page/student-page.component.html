@@ -1,0 +1,49 @@
+
+  <mat-toolbar color="primary" *ngIf="userLoggedIn">
+    <mat-toolbar-row>
+      <span>  </span>
+      <span class="simple-spacer"> </span>
+      <button mat-icon-button class="buttonClass" aria-label="Butonul pentru logout" (click)= "onLogout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <!--Buton HTML
+      <button mat-icon-button class="icon-spacer" aria-label="Example icon-button with heart icon" (click)="view()">
+        <mat-icon>menu</mat-icon>
+        <span>HTML</span>
+      </button>-->
+
+      <button mat-button [matMenuTriggerFor]="menuHTML">HTML</button>
+      <mat-menu #menuHTML="matMenu" class="icon-spacer">
+        <button mat-menu-item (click)="intro()">Introducere</button>
+        <button mat-menu-item (click)="head()">Head</button>
+        <button mat-menu-item (click)="view()">Paragrafe/Heading-uri</button>
+        <button mat-menu-item (click)="view()">Atribute/Styling</button>
+        <button mat-menu-item (click)="view()">Citate/Comentarii</button>
+        <button mat-menu-item (click)="view()">Culori/Imagini</button>
+        <button mat-menu-item (click)="view()">Tabele</button>
+        <button mat-menu-item (click)="view()">Liste</button>
+        <button mat-menu-item (click)="view()">Blocuri</button>
+        <button mat-menu-item (click)="view()">Clase/Id-uri</button>
+        <button mat-menu-item (click)="view()">Iframe/Layout</button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="menuCSS">CSS</button>
+      <mat-menu #menuCSS="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="video">
+    <video controls (click)="toggleVideo()" #videoPlayer>
+      <source src="{{videoSource}}" type="video/mp4" />
+      Browser not supported
+    </video>
+  </div>
+
+

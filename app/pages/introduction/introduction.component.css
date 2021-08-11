@@ -1,0 +1,120 @@
+
+.p2{font-size:15px;
+  color:black;
+  text-indent: 20px;
+font-family: cursive;
+margin-left: 10px;}
+
+
+h2{
+margin-left:70px;
+}
+
+.stanga{
+  border:5px solid white;
+  width: 350px;
+  height: 465px;
+  margin-top: 40px;
+  margin-left: 100px;
+
+}
+
+.topdiv{
+  width: 345px;
+  height: 80px;
+  color:white;
+  background-color: white;
+  border:5px solid white;
+}
+
+#icon{
+
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.dreapta{
+  position:static;
+  border:5px solid white;
+  width: 370px;
+  height: 465px;
+  margin-top: -475px;
+  margin-left: 950px;
+
+}
+
+.topdiv2{
+  width: 365px;
+  height: 90px;
+  color:white;
+  background-color: white;
+  border:5px solid white;
+}
+#creation{
+
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.centru{
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  margin-top: -40px;
+  margin-left: -50px;
+  width: 300px;
+  height: 490px;
+  border:5px solid white;
+}
+
+.topdivc{
+  width: 295px;
+  height: 80px;
+  color:black;
+  background-color:#474449;
+  border:5px solid white;
+}
+span {color:whitesmoke;
+}
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+h1{
+  position: absolute;
+  color:white;
+  margin-left: 70px;
+  margin-top: 30px;
+  font-family: cursive;
+  text-align: center;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}
+
+
+#centerH1 {
+  margin-left: 650px;
+  margin-top:50px;
+  color:black;
+  font-family: cursive;
+  text-align: center;
+}
+
+li{
+  font-size:15px;
+  color:black;
+  text-indent: 20px;
+  font-family: cursive;
+}
