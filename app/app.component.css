@@ -1,3 +1,23 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}

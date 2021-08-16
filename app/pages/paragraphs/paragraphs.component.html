@@ -1,0 +1,84 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+<br>
+  <div id="id1">
+    <div id="top1">
+      <p class="etichete" style="margin-top: 20px;"> Heading < h ></p>
+    </div>
+      <p class="p2"> <span>Heading-urile</span>, traduse ca si "rubrici" sunt foarte importante pentru o pagina web. Motoarele de cautare ale browserelor le utilizeaza pentru a
+        inzestra cu un indice de clasificare structura si continutul paginilor web. Acestea sunt importante <span>pentru a evidentia structura unei pagini</span>.
+        Eticheta <span>< h1 ></span> este cea mai importanta, avand scrisul cel mai mare, astfel ea va fi urmata  de < h2 > pana la < h6 >.</p>
+      <br>
+    <img src="assets/p8.png" width="400px"height="300px" style="margin-left:200px" >
+    <p class="p2"> Ceea ce este foarte <span>important</span> de inteles pentru cei care invata cum sa creeze o pagina web este faptul ca aceste rubrici sau "heading-uri"
+      <span>nu au nici o legatura</span> cu < head > -ul, acesta fiind situat intre etichetele < html > si < body > si  contine metadate!</p>
+    <p class="p2">Tot aici, va putem reaminti de eticheta <span> < hr > </span> mentionata anterior. Dupa cum am spus, aceasta este un tag care nu trebuie inchis, fiind liber, care
+      defineste o pauza tematica in html, fiind afisat ca o linie orizontala.</p>
+    <img src="assets/p9.png"  style="margin-left:200px">
+  </div>
+
+<br>
+  <br>
+
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;"> Paragraph < p ></p>
+    </div>
+    <div id="stanga">
+      <p class="p2"> Etichetele <span>< p ></span> definesc un paragraf. Indiferent de cum este redactat acesta in codul sursa (cu multe spatii intre cuvinte,
+      pe mai multe linii, sau pe o singura linie) browserul web <span>va ignora</span> acest lucru si va afisa paragraful pe dimensiunea ferestrei sale, ca si un text normal.
+      </p>
+      <img src="assets/p10.png"  style="margin-left:100px">
+    </div>
+
+    <div id="dreapta">
+      <p class="p2">Din cauza afisarii corecte a paragrafului, exista mici dificultati, de exemplu in cazul in care doriti sa scrieti o poezie, insa
+      html-ul s-a gandit la toate. <br>
+
+        <p class="p2">In astfel de situatii, in care doriti ca <span>fiecare propozitie</span> a paragrafului sa fie scrisa <span>pe cate o linie noua</span>, puteti sa folositi tag-ul
+      <span> < pre ></span>, astfel acesta va afisa textele exact asa cum le-ati scris in codul sursa, fie ele pe linii diferite, fie cu mai multe spatii intre ele.</p>
+    </div>
+    <br>
+    <p class="p2"> In cazul in care uitati de aceasta eticheta ,puteti simplu sa folositi tag-ul <span> < br ></span>, iar acesta va trece la o linie noua, fara a incepe un nou paragraf.</p>
+
+  </div>
+  <img src="assets/HTML.gif"  style="width:300px;height:240px;margin-left:100px;margin-top: -600px;">
+  <br><br><br>
+
+
+  <div class="scroll-css-class">
+    <ng-content select="[scroll]"></ng-content>
+  </div>
+
+</div>
+
+<div class="tutorial-css-class">
+  <ng-content select="[tutorial]"></ng-content>
+</div>
+
+

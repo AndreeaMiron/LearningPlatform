@@ -1,2 +1,22 @@
 <router-outlet></router-outlet>
 
+  <div scroll >
+    <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+      <button (click)="scrollToTop()">
+        <i class="fa fa-chevron-up"></i>
+        <mat-icon>keyboard_capslock</mat-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <div tutorial >
+    <mat-toolbar color=white *ngIf="userLoggedIn">
+    <button mat-icon-button  aria-label="Buton tutorial" (click)="tutorial()">
+      <img src="assets/html.png" style="margin-left:1300px;width:80px;height:60px;">
+    </button>
+
+  </mat-toolbar>
+  </div>
+
+

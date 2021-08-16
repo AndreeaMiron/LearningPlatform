@@ -18,7 +18,7 @@ export class HeadComponent implements OnInit {
   script:boolean=true;
   scriptIcon:boolean=true;
 
-  windowScrolled: boolean;
+
 
   constructor( private router:Router,
                private route: ActivatedRoute,
@@ -32,27 +32,9 @@ export class HeadComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-      this.windowScrolled = true;
-    }
-    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-      this.windowScrolled = false;
-    }
-  }
-  scrollToTop() {
-    (function smoothscroll() {
-      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 8));
-      }
-    })();
-  }
 
   next(){
-    //this.router.navigate(["/head"]);
+    this.router.navigate(["/paragraphs"]);
   }
   quiz(){
    // this.router.navigate(["/intro-survey"]);
@@ -62,10 +44,6 @@ export class HeadComponent implements OnInit {
     this.router.navigate(["/student-page"]);
   }
 
-  tutorial(){
-    window.location.href="https://www.youtube.com/watch?v=5cTQ6i-KmZc&list=PLRlcs-KgbzEcAnDpKq7zYBsXx8_qkJ9ME";
-
-  }
   back(){
     this.router.navigate(["/introduction"]);
   }

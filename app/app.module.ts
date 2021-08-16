@@ -23,6 +23,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { IntroductionComponent } from './pages/introduction/introduction.component';
 import { IntroSurveyComponent } from './pages/intro-survey/intro-survey.component';
 import { HeadComponent } from './pages/head/head.component';
+import { ParagraphsComponent } from './pages/paragraphs/paragraphs.component';
+import { AttributeComponent } from './pages/attribute/attribute.component';
+import { QuotesComponent } from './pages/quotes/quotes.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { HeadComponent } from './pages/head/head.component';
     StudentPageComponent,
     IntroductionComponent,
     IntroSurveyComponent,
-    HeadComponent
+    HeadComponent,
+    ParagraphsComponent,
+    AttributeComponent,
+    QuotesComponent
   ],
   imports: [
     BrowserModule,

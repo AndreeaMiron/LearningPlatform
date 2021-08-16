@@ -33,8 +33,4 @@ home(){
   this.router.navigate(["/student-page"]);
 }
 
-tutorial(){
-    window.location.href="https://www.youtube.com/watch?v=5cTQ6i-KmZc&list=PLRlcs-KgbzEcAnDpKq7zYBsXx8_qkJ9ME";
-
-}
 }

@@ -1,0 +1,98 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+
+  <br>
+
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;">Atribute</p>
+    </div>
+
+      <p class="p2"> Toate elementele HTML pot avea atribute, acestea continand <span>informatii despre elemente</span>, de exmplu: lungime, latime, culoare etc.. Acestea se scriu sub forma <span>nume="valoare"</span>.
+      </p>
+      <p class="p2"> De exemplu,cand inserati o imagine ,veti folosi atributul:<br> <span>1/</span><span class="purple">"src"</span>  care precizeaza numele imaginii pe care vreti sa o
+        afisati,atributele width si height pentru lungime si latime sau <br> <span>2/</span><span
+          class="purple">"alt"</span> (alternative text) care va
+        afisa un text in cazul in care imaginea nu poate fi afisata din diferite motive.
+      </p>
+    </div>
+<br><br>
+  <img src="assets/arrow.gif" style="width:90px;height:90px;margin-left: 700px;"/>
+<div id="id3">
+      <p class="p2"><span>3/</span><span class="purple">"style"</span> este folosit pentru a specifica stilul unui element, cum ar fi culoarea, fontul, dimensiunea etc.
+      </p>
+      <p class="p2">
+      Folosind atributul "style" putem de exemplu sa schimbam culoarea unui text. Pentru a face acest lucru, trebuie sa folosim:"< p style="color: *culoarea pe care o dorim* " > "
+      </p>
+      <p style="color:#F2D509;margin-left: 30px;">Sunt galben</p>
+  </div>
+  <br><br>
+  <img src="assets/arrow.gif" style="width:90px;height:90px;margin-left:900px;"/>
+<div id="id4">
+      <p class="p2"><span>4/</span><span class="purple">"lang"</span> (prescurtat de la language), care defineste limbajul documentului, astfel se va scrie formatul specific limbajului, urmat de o linie de pauza si prescurtarea tarii: < html lang="ro-RO">. Ceea ce este important de
+        retinut este faptul ca acest atribut <span>se foloseste in tag-ul HTML!!</span> </p>
+    <p class="p2"><span>5/</span><span class="purple">"title"</span> se adauga paragrafelor, astfel in momentul in care tinem mouse-ul deasupra unui paragraf, va aparea o caseta
+      care reprezinta un "ajutor", acesta actionand ca si un comentariu. Astfel daca tineti mouse-ul <span title="Acesta este un tooltip, acel mic ajutor :)">AICI</span> veti vedea ce se intampla.</p>
+   <br>
+    <p class="p2">Pentru a putea gasi mai multe astfel de atribute puteti accesa pagina:
+      <a href="https://www.w3schools.com/tags/ref_attributes.asp" style="color:black">W3schools</a>
+    </p>
+
+</div>
+
+<br><br><br>
+  <div id="id5">
+    <div  id="top3">
+      <p class="etichete" style="margin-top: 20px;">Stiluri pentru text</p>
+    </div>
+
+    <p class="p2">Pentru a putea stiliza un text exact in tag-ul din care face parte,dupa cum am spus si mai sus,va trebui sa folosim atributul style,deci:</p>
+
+    <ol class="taguri">
+      <li>Culoarea fundalului:  <span>style="background-color:culoarea pe care o dorim;"</span></li>
+      <li>Culorea textului: <span style="color:purple;">style="color:culoarea;"</span>	</li>
+      <li>Aspectul scrisului: <span>style="font-family:tipul;"</span>	</li>
+      <li>Dimensiunea textului: <span style="color:purple;">style="font-size:x%"</span></li>
+      <li>Alinierea textului: <span>style="align:left/center/right"</span></li>
+    </ol>
+
+    <img src="assets/among.gif" style="width:200px;height:200px;margin-left: -400px;margin-top: -250px;"/>
+  </div>
+
+  <br><br><br>
+  <div class="scroll-css-class">
+    <ng-content select="[scroll]"></ng-content>
+  </div>
+</div>
+
+
+<div class="tutorial-css-class">
+  <ng-content select="[tutorial]"></ng-content>
+</div>

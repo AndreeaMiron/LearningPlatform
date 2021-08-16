@@ -72,4 +72,14 @@ export class StudentPageComponent implements OnInit {
   head(){
     this.router.navigate(['/head']);
   }
+  paragraphs(){
+    this.router.navigate(['/paragraphs']);
+  }
+  attribute(){
+    this.router.navigate(['/attribute']);
+  }
+
+  quotes() {
+    this.router.navigate(['/quotes']);
+  }
 }

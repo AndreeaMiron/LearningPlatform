@@ -1,0 +1,74 @@
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}
+.p2{font-size:15px;
+  color:black;
+  text-indent: 25px;
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+ }
+
+span {color:whitesmoke;
+}
+
+
+
+
+
+#top1{
+  width: 995px;
+  height: 50px;
+  color:black;
+  background-color:#E8E6EA;
+  border:5px solid white;
+}
+#id1{
+  border:5px solid white;
+  width: 1000px;
+  height: 700px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.etichete{
+  font-family: cursive;
+  color:black;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+#id2{
+  top: 125%;
+  margin-left: 500px;
+  width: 900px;
+  height: 400px;
+  border:5px solid white;
+}
+
+#top2{
+  width: 895px;
+  height: 50px;
+  color:black;
+  background-color:#948D9C;
+  border:5px solid white;
+}
+#stanga{
+  width: 400px;
+  height: 200px;
+}
+#dreapta{
+  margin-top: -220px;
+  margin-left: 450px;
+  width: 400px;
+  height: 200px;
+}

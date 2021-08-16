@@ -23,8 +23,7 @@
 <div  [ngStyle]="{backgroundColor:'#8A878B',
 backgroundSize:'cover',
 backgroundRepeat:'no-repeat',
-backgroundPosition:'center',
-height:'390%'
+backgroundPosition:'center'
 }" >
 
 <br>
@@ -145,18 +144,12 @@ height:'390%'
   </div>
 
 
-  <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
-    <button (click)="scrollToTop()">
-      <i class="fa fa-chevron-up"></i>
-      <mat-icon>keyboard_capslock</mat-icon>
-    </button>
+  <div class="scroll-css-class">
+    <ng-content select="[scroll]"></ng-content>
   </div>
 
 </div>
 
-  <mat-toolbar color=white *ngIf="userLoggedIn">
-    <button mat-icon-button  aria-label="Buton tutorial" (click)="tutorial()">
-      <img src="assets/html.png" style="margin-left:1300px;width:80px;height:60px;">
-    </button>
-
-  </mat-toolbar>
+<div class="tutorial-css-class">
+  <ng-content select="[tutorial]"></ng-content>
+</div>

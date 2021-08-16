@@ -6,6 +6,9 @@ import {StudentPageComponent} from './pages/student-page/student-page.component'
 import {IntroductionComponent} from './pages/introduction/introduction.component';
 import {IntroSurveyComponent} from './pages/intro-survey/intro-survey.component';
 import {HeadComponent} from './pages/head/head.component';
+import {ParagraphsComponent} from './pages/paragraphs/paragraphs.component';
+import {AttributeComponent} from './pages/attribute/attribute.component';
+import {QuotesComponent} from './pages/quotes/quotes.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,7 +17,9 @@ const routes: Routes = [
   {path: 'introduction', component: IntroductionComponent},
   {path: 'intro-survey', component: IntroSurveyComponent},
   {path: 'head', component: HeadComponent},
-
+  {path: 'paragraphs', component: ParagraphsComponent},
+  {path: 'attribute', component: AttributeComponent},
+  {path: 'quotes', component: QuotesComponent},
 ];
 
 @NgModule({
