@@ -17,8 +17,8 @@ public class LearningResourcesApplication {
 	@Bean
 	CommandLineRunner init(UserRepository userRepository){
 		return args -> {
-		Student s= Student.builder().firstName("Andreea").lastName("Miron").email("andreeamiron.99@yahoo.com").password("1234").build();
-		userRepository.save(s);
+		//Student s= Student.builder().firstName("Andreea").lastName("Miron").email("andreeamiron.99@yahoo.com").password("1234").build();
+		//userRepository.save(s);
 
 		};
 	}

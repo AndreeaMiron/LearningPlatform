@@ -27,8 +27,4 @@ public class LoginController {
         return ResponseEntity.status(HttpStatus.OK).body(loginService.logout(dto));
     }
 
-    @GetMapping("/connected-users")
-    public ResponseEntity findNrOfUsers(){
-        return ResponseEntity.status(HttpStatus.OK).body(loginService.findNrOfUsers());
-    }
 }

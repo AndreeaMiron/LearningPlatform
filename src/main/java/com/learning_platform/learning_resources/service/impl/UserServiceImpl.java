@@ -20,12 +20,6 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Override
-    public int findNrOfUsers() {
-
-        return loginService.findNrOfUsers();
-
-    }
 
 
 

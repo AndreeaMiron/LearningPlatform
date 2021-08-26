@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
 public interface UserService {
 
     public User save(User u);
-    int findNrOfUsers();
+
 }

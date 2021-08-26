@@ -30,10 +30,6 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public LoginSuccesDTO login(CredentialsDTO dto) throws ApiExceptionResponse {
         User user=userRepository.findFirstByEmail(dto.getEmail());
-        /*System.out.println(dto.getPassword() + user.getPassword());
-        LoginSuccesDTO response;
-        response=LoginSuccesDTO.builder().id(user.getId()).role("STUDENT").build();
-        return response;*/
         if(user == null) {
 
             throw ApiExceptionResponse.builder().errors(Collections.singletonList("Wrong username"))
@@ -55,12 +51,11 @@ public class LoginServiceImpl implements LoginService {
         }
 
         if(passwordEncoder.matches(dto.getPassword(),user.getPassword()))
-        //if(dto.getPassword().equals(user.getPassword()))
         { hm.put(user.getId(),1);
             System.out.println("S a logat cineva");
             return response;
         }
-        //}
+
 
 
         throw ApiExceptionResponse.builder().errors(Collections.singletonList("Wrong password"))
@@ -76,15 +71,5 @@ public class LoginServiceImpl implements LoginService {
     }
 
 
-    public int findNrOfUsers() {
-        int nr=0;
-        for (Map.Entry<Long, Integer> entry : hm.entrySet()) {
-            if(entry.getValue()!=-1)
-                nr++;
-        }
-
-        nr--;
-        return nr;
-    }
 
 }

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 public interface LoginService {
     LoginSuccesDTO login(CredentialsDTO dto) throws ApiExceptionResponse;
     boolean logout(String sto);
-    public int findNrOfUsers();
+
 }
