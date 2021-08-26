@@ -7,3 +7,72 @@
 .simple-spacer {
   flex: 1 1 auto;
 }
+.p2{font-size:15px;
+  color:black;
+  text-indent: 25px;
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+span {color:whitesmoke;
+}
+
+.etichete{
+  font-family: cursive;
+  color:black;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+#id2{
+  margin-left: 200px;
+  width: 300px;
+  height: 350px;
+  border:5px solid white;
+}
+
+#top2 {
+  width: 295px;
+  height: 50px;
+  color: black;
+  background-color: #908E80;
+  border: 5px solid white;
+}
+
+
+#id3{
+  margin-top: -300px;
+  margin-left: 1000px;
+  width: 300px;
+  height: 350px;
+  border:5px solid white;
+}
+
+#top3 {
+  width: 295px;
+  height: 50px;
+  color: black;
+  background-color: #5F5E5B;
+  border: 5px solid white;
+}
+
+
+#id4{
+
+  margin-left: 400px;
+  width: 700px;
+  height: 450px;
+  border:5px solid white;
+}
+
+#top4 {
+  width: 695px;
+  height: 50px;
+  color: black;
+  background-color: #B8B29F;
+  border: 5px solid white;
+}

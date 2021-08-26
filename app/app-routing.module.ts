@@ -9,17 +9,25 @@ import {HeadComponent} from './pages/head/head.component';
 import {ParagraphsComponent} from './pages/paragraphs/paragraphs.component';
 import {AttributeComponent} from './pages/attribute/attribute.component';
 import {QuotesComponent} from './pages/quotes/quotes.component';
+import {ColorsComponent} from './pages/colors/colors.component';
+import {GoogleComponent} from './pages/google/google.component';
+import {CountdownComponent} from './pages/countdown/countdown.component';
+import {AdminPageComponent} from './pages/admin-page/admin-page.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'student-page', component: StudentPageComponent},
+  {path: 'admin-page', component: AdminPageComponent},
   {path: 'introduction', component: IntroductionComponent},
   {path: 'intro-survey', component: IntroSurveyComponent},
   {path: 'head', component: HeadComponent},
   {path: 'paragraphs', component: ParagraphsComponent},
   {path: 'attribute', component: AttributeComponent},
   {path: 'quotes', component: QuotesComponent},
+  {path: 'colors', component: ColorsComponent},
+  {path: 'google', component: GoogleComponent},
+  {path: 'countdown', component: CountdownComponent},
 ];
 
 @NgModule({

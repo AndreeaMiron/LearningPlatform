@@ -1,10 +1,12 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../../services/login.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import SockJS from 'sockjs-client';
 import {Stomp} from '@stomp/stompjs';
+import {QuestionService} from '../../services/question.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-student-page',
@@ -16,6 +18,9 @@ export class StudentPageComponent implements OnInit {
   connectedUser:string;
   stompClient:any;
   userLoggedIn:boolean=true;
+  forum:FormGroup;
+  currentDate = new Date();
+  date:string;
 
   @ViewChild('videoPlayer') videoplayer: ElementRef;
   videoSource: string="assets/video.mp4";
@@ -24,16 +29,32 @@ export class StudentPageComponent implements OnInit {
                private router:Router,
                private formBuilder:FormBuilder,
                private loginService:LoginService,
-               private snackBar:MatSnackBar) {
+               private snackBar:MatSnackBar,
+               private questionService:QuestionService,
+               private datePipe: DatePipe) {
     this.route.queryParams.subscribe(params => {
       this.connectedUser = params['id'];
       if(Number(this.connectedUser) > 0)
         this.userLoggedIn=true;
     });
+
   }
 
   ngOnInit(): void {
     this.subscribeToNotifications();
+    this.initForum();
+
+  }
+get question(){
+    return this.forum.get('question');
+}
+  initForum(){
+    this.forum=this.formBuilder.group({question:['',Validators.required]})
+  }
+  submitForum(){
+    this.date = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd HH:mm');
+   this.questionService.submitQuestion(this.question.value,this.connectedUser,this.date).subscribe((res:any)=>{});;
+
   }
   onLogout(){
     this.loginService.logout(this.connectedUser);
@@ -81,5 +102,16 @@ export class StudentPageComponent implements OnInit {
 
   quotes() {
     this.router.navigate(['/quotes']);
+  }
+
+  colors() {
+    this.router.navigate(['/colors']);
+  }
+
+  google(){
+    this.router.navigate(['/google']);
+  }
+  count(){
+    this.router.navigate(['/countdown']);
   }
 }

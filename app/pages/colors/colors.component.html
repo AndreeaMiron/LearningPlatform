@@ -1,0 +1,96 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+  <h1><marquee behavior="scroll" direction="right" scrollamount="10"><ins>Formate pentru culoare</ins></marquee></h1>
+  <p class="p2">In HTML, culorile pot fi specificate folosind valori RGB, HEX, HSL, RGBA sau HSLA :</p>
+  <div class="stanga">
+    <div class="topdiv"><p class="etichete">RGB</p></div>
+    <p class="p2">In HTML, o culoare poate fi specificata cu o valoare  RGB ,folosind aceasta fromula: <span>rgb(red, green, blue)</span>
+
+      fiecare parametru(red *rosu*,green*verde*,blue*albastru*) defineste intensitatea unei culori,intre 0 si 255.</p>
+
+    <p class="p2">  De exemplu, rgb(255, 0, 0) va afisa culoarea rosie, deoarece rosul este setat la cea mai mare valoare a sa (255) ,iar celelalte sunt setate la 0.</p>
+
+    <p class="p2">  Pentru a afisa culoarea neagra, toti parametrii culorilor trebuie setati la 0: rgb(0, 0, 0).</p>
+
+    <p class="p2">  Pentru a afisa culoarea alba,toti parametrii culorilor trebuie setati la 255: rgb(255, 255, 255).</p>
+    <img src="assets/p39.png"  style="width:450px;height:200px;">
+
+  </div>
+
+
+  <div class="dreapta">
+    <div class="topdiv2"><p class="etichete">HEX</p></div>
+    <img src="assets/p40.png"  style="width:450px;height:200px;">
+    <p class="p2">In HTML, o culoare poate fi de asemenea specificata folosind o valoare hexadecimala de forma : "#rrggbb",
+      unde "rr","gg" si "bb" sunt valori hexadecimale intre 00 si ff (la fel ca si decimalele 0-255).</p>
+
+    <p class="p2">De exemplu, #ff0000 va afisa culoarea rosie, pentru ca rosul este setat la cea mai mare valoare a sa (ff), iar celelalte sunt setate la cea mai mica valoare (00).</p>
+<p class="p2">Se pot gasi culori sub diferite valori <a href="https://htmlcolorcodes.com/">AICI</a></p>
+  </div>
+  <br><br>
+
+  <div id="id1">
+    <div id="top1">
+      <img src="assets/p41.png"  style="width:450px;height:200px;">
+    </div>
+    <li>Luminozitate
+      <p class="p2">Luminozitatea unei culori poate fi descrisa ca fiind lumina pe care vrei sa o oferi unei culori ,unde 0% inseamna fara lumina (negru), 50% inseamna 50% lumina (nici inchis nici deschis),iar 100% inseamna luminozitate completa (alb).</p>
+
+      <p class="p2">In cazul de mai sus,puteti observa alta valoare folosita pentru a declara culorile,adica hsl(grad*hue*, saturatie, luminozitate)</p>
+
+      <p class="p2">1)"Hue" reprezinta valoare unui grad de pe roata culorilor de la 0 la 360. 0 este culoarea rosie, 120 verde, iar 240 este albastrul.</p>
+
+      <p class="p2">2)Saturatia este o valoare de tip procentaj, unde 0% inseamna o nuanta de gri, iar 100% este culoarea completa.</p>
+
+      <p class="p2">3)Luminozitatea este de asemenea un procentaj, 0% fiind negru, 50% nu e nici inchis nici deschis,iar  100% este alb.</p>
+    </li>
+  </div>
+
+  <div id="id2">
+    <div id="top2">
+      <img src="assets/p42.png"  style="width:450px;height:200px;">
+    </div>
+    <p class="p2">Saturatia poate fi descrisa ca fiind intensitatea culorii.100% e culoarea pura,fara nuante de gri.50% este  50% gri, dar culoarea inca se poate vedea,iar 0% este gri complet,iar culoarea nu mai poate fi vazuta.</p>
+
+
+  </div>
+
+  <div id="id3">
+    <div id="top3">
+      <img src="assets/p43.png"  style="width:450px;height:200px;">
+    </div>
+    Opacitate
+    <p class="p2">Valorile culorilor HSLA sunt o extensie a culorilor HSL ,dar cu un parametru alpha - care specifica opacitatea unei culori.
+      Parametrul alpha este un numar intre 0.0 ( complet transparent) si 1.0 (nu e transparent de tot):</p>
+  </div>
+  <p class="p2">I1)Cum setezi fundalul unei pagini de o anumita culoare?->Ex: <span>< h1 style="background-color:DodgerBlue;" >Fundal albastru< / h1 ></span></p>
+  <p class="p2">I2)Cum dai culoare unui text?->Ex: <span>< h1 style="color:Tomato;" >Text rosu < / h1 ></span></p>
+  <p class="p2">I3)Cum colorezi bordura unui text?->Ex: <span>< h1 style="border:2px solid Violet;" >Bordura mov< / h1 ></span></p>
+</div>

@@ -1,0 +1,116 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#BA93A9',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+
+  <br>
+
+  <div class="stanga">
+    <div class="topdiv"><p class="etichete"><img src="assets/monophy.gif" style="width: 50px;height :50px;"></p></div>
+<ul>
+  <li>
+    Incepeti prin a crea un element de tip div,caruia ii veti atribui un id,de exemplu "map" de la harta
+  </li>
+  <br>
+  <li>
+    In interiorul divului,cu ajutorul atributului style,veti selecta lungimea si latimea dorita pentru harta:
+    <img src="assets/p64.png" style="margin-left:20px">
+  </li>
+  <br>
+  <li>
+    Vom crea o functie JavaScript, pentru a dispune harta. Aceasta functie va fi adaugata cu ajutorul tagului <span>< script > </span>
+    <img src="assets/p65.png" style="margin-left:20px"><br>
+  </li>
+</ul>
+
+  </div>
+
+  <div id="dictionary">
+    <div id="dictIcon" *ngIf="dictIcon">
+
+      <img src="assets/book.jpg" style="width:50px;height:50px;margin-left: 100px;">
+      <button style="margin-left: 140px;" (click)="dictFunction()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+
+    </div>
+
+    <div id="display" *ngIf="dictionary">
+      <ul><li><span>mapCanvas</span> Widgetul Canvas pentru hărți este probabil cel mai important widget din cadrul QGIS(aplicație pentru sistemele informaționale geografice de tip desktop open-source care acceptă vizualizarea, editarea și analiza datelor geospatiale.),
+        deoarece afiseaza harta compusă din mai multe straturi de harti suprapuse și permite interacțiunea cu acestea.</li>
+        <li> <span>mapOptions</span> defineste proprietatile hartii</li>
+        <li><span>center</span> specifica unde sa centreze harta(folosind coordonatele de latitudine si longitudine, care va vom arata in cele ce urmeaza cum sa le obtineti).</li>
+        <li><span>zoom</span> specifica nivelul zoom-ului pentru harta, adica cat de aproape sa se vada locatia </li>
+        <li><span>google.maps.Map</span> este harta in sine, creata cu  mapCanvas si mapOptions ca si parametrii</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div id="stanga">
+    <div class="topdiv"><p class="etichete"><img src="assets/monophy.gif" style="width: 50px;height :50px;"></p></div>
+    <ul>
+      <li>
+        Adaugam API-ul de la Google. Un API (Application Programming Interface) este un set de unelte care pot fi folosite
+        pentru construirea aplicatiilor software. Functionalitatea hartii provinde de la o librarie JavaScript localizata la Google.
+        API-ul Google maps ne permite sa afisam harti pe pagina noastra web. Pentru a face acest lucru vom adauga urmatoarele: <br>
+        <span>< script src=" https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap " >< / script></span>
+      </li>
+      <br>
+      <li>
+        In loc de YOUR_KEY, vom adauga propriul nostru cod API, pe care il vom primi de la Google astfel:<br>
+        Intrati <a href="https://console.developers.google.com/apis/dashboard?project=pagina-web-201611&folder&organizationId&duration=P30D" target="_blank">aici </a>, dupa care veti apasa pe <span>Enable API and Services.</span>
+        Selectati <span>Google Maps JavaScript API</span>, apoi Enable. Dupa aceea, pe aceeasi pagina, mergeti la CREDENTIALS, unde veti gasi cheia dumneavoastra pentru a adauga harta.
+        <br>Mai jos aveti un link, in caz ca nu va descurcati :<br>
+        <a href="https://www.youtube.com/watch?v=_HYYJelTExE"><span> Cum iau o cheie API?</span></a>
+      </li>
+      <br>
+
+    </ul>
+
+    <p class="p2">Acum sa vedem cum a fost adaugata harta noastra pe pagina web:</p>
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+    </agm-map>
+  </div>
+  <div id="coords">
+    <div id="text">
+      <p class="p2" style="margin-left: 40px;"><span>Cum afli coordonatele</span> pentru locatie? Intrati pe
+        Google Maps, unde cautati locatia dorita. Dupa ce sunteti condusi pe harta la aceasta, apasati click dreapta, apoi <span>"Ce se afla aici?"</span>. Va aparea
+        o caseta cu locatia ,iar mai jos veti avea coorodnatele acesteia, pe care trebuie sa le copiati <span>! In intregime !</span></p>
+      <img src="assets/left.gif" id="left">
+      <img src="assets/google.png" style="width: 370px;height:370px;margin-left: 40px;">
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+
+
+
+</div>

@@ -1,0 +1,108 @@
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}
+
+
+.etichete{
+  font-family: cursive;
+  color:black;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 20px;
+
+}
+
+.p2{font-size:15px;
+  color:black;
+  text-indent: 25px;
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+ }
+
+span {color:whitesmoke;
+}
+
+
+.stanga{
+  border:5px dotted white;
+  width: 750px;
+  height: 500px;
+  margin-top: 90px;
+  margin-left: 100px;
+
+}
+
+.topdiv{
+  width: 745px;
+  height: 50px;
+  color:white;
+  background-color: white;
+  border:5px dotted black;
+}
+
+
+#dictionary{
+
+  width: 370px;
+  height: 600px;
+margin-top: -600px;
+  margin-left: 1100px;
+
+}
+
+#dictIcon{
+  width: 365px;
+  height: 65px;
+  color:black;
+  background-color:#E8E6EA;
+  border:5px solid white;
+}
+
+
+#display{
+  width:300px;
+  height:900px;
+}
+
+
+
+agm-map {
+  height: 600px;
+  width:600px;
+
+}
+
+#stanga{
+
+  border:5px dotted white;
+  width: 750px;
+  height: 1100px;
+  margin-top: 90px;
+  margin-left: 600px;
+
+}
+
+#coords{
+margin-top: -1000px;
+  margin-left: 20px;
+  width: 500px;
+  height:700px;
+}
+
+#text{
+  width:300px;
+  height:600px;
+}
+
+#left{
+  width: 120px;
+  height:100px;
+  margin-left:450px;
+}

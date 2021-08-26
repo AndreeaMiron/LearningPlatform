@@ -1,5 +1,5 @@
 
-  <mat-toolbar color="primary" *ngIf="userLoggedIn">
+  <mat-toolbar color="warn" *ngIf="userLoggedIn">
     <mat-toolbar-row>
       <span>  </span>
       <span class="simple-spacer"> </span>
@@ -22,7 +22,7 @@
         <button mat-menu-item (click)="paragraphs()">Paragrafe/Heading-uri</button>
         <button mat-menu-item (click)="attribute()">Atribute/Styling</button>
         <button mat-menu-item (click)="quotes()">Citate/Comentarii</button>
-        <button mat-menu-item (click)="view()">Culori/Imagini</button>
+        <button mat-menu-item (click)="colors()">Culori/Imagini</button>
         <button mat-menu-item (click)="view()">Tabele</button>
         <button mat-menu-item (click)="view()">Liste</button>
         <button mat-menu-item (click)="view()">Blocuri</button>
@@ -36,14 +36,45 @@
         <button mat-menu-item>Item 2</button>
       </mat-menu>
 
+      <button mat-button [matMenuTriggerFor]="menuApp">Aplicatii practice</button>
+      <mat-menu #menuApp="matMenu">
+        <button mat-menu-item (click)="google()">Integrare Google map</button>
+        <button mat-menu-item (click)="count()">Countdown</button>
+
+      </mat-menu>
+
     </mat-toolbar-row>
   </mat-toolbar>
+<br>
 
   <div class="video">
-    <video controls (click)="toggleVideo()" #videoPlayer>
+    <video preload="auto" controls (click)="toggleVideo()" #videoPlayer style="width: 600px;height: 500px;top: 200px;left:800px;z-index:-1; position: absolute;border: 5px solid black;">
       <source src="{{videoSource}}" type="video/mp4" />
       Browser not supported
     </video>
   </div>
+
+  <div class="forum">
+    <mat-card>
+      <mat-card-title>Feel free to ask questions directly from the source
+      </mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="forum" (submit)="submitForum()">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Your question</mat-label>
+            <input matInput formControlName="question" name="question">
+          </mat-form-field>
+          <br/>
+          <button mat-button type="submit">Send</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+<br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 

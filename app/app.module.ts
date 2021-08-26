@@ -26,7 +26,12 @@ import { HeadComponent } from './pages/head/head.component';
 import { ParagraphsComponent } from './pages/paragraphs/paragraphs.component';
 import { AttributeComponent } from './pages/attribute/attribute.component';
 import { QuotesComponent } from './pages/quotes/quotes.component';
-
+import { ColorsComponent } from './pages/colors/colors.component';
+import { GoogleComponent } from './pages/google/google.component';
+import { AgmCoreModule } from '@agm/core';
+import { CountdownComponent } from './pages/countdown/countdown.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import {DatePipe} from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,34 +43,43 @@ import { QuotesComponent } from './pages/quotes/quotes.component';
     HeadComponent,
     ParagraphsComponent,
     AttributeComponent,
-    QuotesComponent
+    QuotesComponent,
+    ColorsComponent,
+    GoogleComponent,
+    CountdownComponent,
+    AdminPageComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatMenuModule,
-    /*
-    MatListModule,
-    MatTableModule,
-    MatOptionModule,
-    MatSelectModule,
-    CommonModule,
-    RatingModule,*/
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCl-T9oL_Mm_HQnM6dhh8mJhn8EdpwL6j8'
+        }),
+        BrowserAnimationsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSnackBarModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatListModule,
+
+        /*
+        MatListModule,
+        MatTableModule,
+        MatOptionModule,
+        MatSelectModule,
+        CommonModule,
+        RatingModule,*/
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: RequestInterceptorService, multi: true
-  }],
+  },DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

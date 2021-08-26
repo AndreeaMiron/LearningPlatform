@@ -12,7 +12,7 @@ import {LoginService} from '../../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   connectedUser: string;
-  nrOfUsers: number ;
+
 
   constructor(private formBuilder: FormBuilder,
               private service: LoginService,
@@ -40,13 +40,15 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.service.login(this.email.value, this.password.value).subscribe((res: any) => {
-      const role = res.role;
+      let role = res.role;
       this.connectedUser = res.id;
 
       localStorage.setItem('token', 'Basic ' + btoa(this.email.value + ':' + this.password.value));
 
       if (role == 'ADMIN'){
-        this.router.navigate(['/student-page']);
+        this.router.navigate(['/admin-page'],{
+          queryParams: {id: res.id}
+        });
       }
       else{
         this.router.navigate(['/student-page'], {
@@ -57,9 +59,6 @@ export class LoginComponent implements OnInit {
       alert('Invalid username or password');
     });
 
-    this.service.findNrOfUsers().subscribe((res: any) => {
-      this.nrOfUsers = res;
-    });
   }
 
   clickRegister(){
