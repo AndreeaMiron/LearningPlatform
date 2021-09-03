@@ -24,4 +24,8 @@ export class UserService {
     return this.httpClient.get<User>(this.getUserURL+email);
   }
 
+  /*findUserById(userId:number){
+    return this.httpClient.get<User>(this.getUserURL+userId);
+  }*/
+
 }

@@ -6,5 +6,6 @@ export class ForumQuestion{
   answer: string;
   date:Date;
   status:string;
-
+  userId:number;
+  userDetails:string;
 }

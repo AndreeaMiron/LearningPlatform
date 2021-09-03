@@ -4,10 +4,11 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import SockJS from 'sockjs-client';
 import {Stomp} from '@stomp/stompjs';
 import {LoginService} from '../../services/login.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ForumQuestion} from '../../model/ForumQuestion';
 import {QuestionService} from '../../services/question.service';
 import {User} from '../../model/User';
+import {UserService} from '../../services/user.service';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
@@ -27,13 +28,13 @@ export class AdminPageComponent implements OnInit {
   notshow:boolean=true;
 
 
-
   constructor( private formBuilder:FormBuilder,
                private route: ActivatedRoute,
               private router:Router,
               private snackBar:MatSnackBar,
               private loginService:LoginService,
-              private forumService:QuestionService) {
+              private forumService:QuestionService,
+               private userService:UserService) {
     this.route.queryParams.subscribe(params => {
       this.connectedUser = params['id'];
       if(Number(this.connectedUser) > 0)
@@ -42,6 +43,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
 
     this.forumService.findAllQuestions().subscribe((res) => {
 
@@ -54,7 +56,9 @@ export class AdminPageComponent implements OnInit {
       (_error) => {
 
       });
-    this.forumService.findAllUsersWithQuestions().subscribe((res) => {
+
+
+    /*this.forumService.findAllUsersWithQuestions().subscribe((res) => {
 
         this.usersList = res;
         console.log("Useri")
@@ -63,25 +67,26 @@ export class AdminPageComponent implements OnInit {
       },
       (_error) => {
 
-      });
+      });*/
 
     this.initQuestionsForm();
-    this.subscribeToNotifications(this.connectedUser);
+    this.subscribeToNotifications();
   }
   initQuestionsForm(){
     this.questions=this.formBuilder.group({
+
     })
   }
 
   get response(){
     return this.responseForm.get('response');
   }
-  subscribeToNotifications(connectedUser:string){
+  subscribeToNotifications(){
     const URL="http://localhost:8080/socket";
     const websocket=new SockJS(URL);
     this.stompClient=Stomp.over(websocket);
     this.stompClient.connect({},()=>{
-      this.stompClient.subscribe('/topic/socket/admin-page/'+connectedUser, notification=>{
+      this.stompClient.subscribe('/topic/socket/admin-page', notification=>{
         let message=notification.body;
 
         this.snackBar.open(message,'Close',{

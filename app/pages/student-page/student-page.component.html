@@ -50,7 +50,7 @@
 <br>
 
   <div class="video">
-    <video preload="auto" controls (click)="toggleVideo()" #videoPlayer style="width: 600px;height: 500px;top: 200px;left:800px;z-index:-1; position: absolute;border: 5px solid black;">
+    <video preload="auto" controls (click)="toggleVideo()" #videoPlayer style="width: 600px;height: 500px;top: 200px;left:800px;z-index:0; position: absolute;border: 5px solid black;">
       <source src="{{videoSource}}" type="video/mp4" />
       Browser not supported
     </video>
@@ -74,7 +74,7 @@
 
   </div>
 
-  <div class="myQuestions" style="width:800px;height:600px;">
+  <div class="myQuestions" style="width:800px;">
     <mat-card>
       <mat-card-title>Your questions:
       </mat-card-title>
@@ -82,18 +82,31 @@
         <form [formGroup]="myQuestions">
           <mat-list>
             <mat-list-item *ngFor="let itm of myQuestionsList" style="color:black;">
-              <div mat-line>Intrebare: {{itm.question}} </div>
-              <div mat-line>Raspuns: {{itm.answer}} </div>
+              <div mat-line style="margin-top: 20px;">{{itm.userDetails}} intreaba: {{itm.question}} </div>
+              <div mat-line><h3>Raspunsuri:</h3>
+                <textarea [readOnly]="true" style="position: absolute;width:300px;height: 50px;margin-top: -20px;" id="replaceVal">{{itm.answer}} </textarea>
+                <div mat-line>  </div>
+                <div mat-line>  </div>
+              </div>
+              <button mat-button (click)="showResponseForm()" id="showResponseForm"><mat-icon>reply</mat-icon></button>
+              <div mat-line>  </div>
+              <ng-container *ngIf="showEdit">
+                <form [formGroup]="responseForm" (submit)="respondToQuestion(itm.id)">
+                  <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Your response:</mat-label>
+                    <input matInput formControlName="response" required>
+                  </mat-form-field>
+                  <button mat-button type="submit">Send!</button>
+                </form>
+              </ng-container>
             </mat-list-item>
               </mat-list>
         </form>
       </mat-card-content>
     </mat-card>
   </div>
-  <br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 
 
 

@@ -8,6 +8,7 @@ import {Stomp} from '@stomp/stompjs';
 import {QuestionService} from '../../services/question.service';
 import {DatePipe} from '@angular/common';
 import {ForumQuestion} from '../../model/ForumQuestion';
+import {$} from 'protractor';
 
 @Component({
   selector: 'app-student-page',
@@ -24,6 +25,9 @@ export class StudentPageComponent implements OnInit {
   myQuestionsList:ForumQuestion[];
   currentDate = new Date();
   date:string;
+  responseForm:FormGroup;
+  showEdit:boolean=false;
+  show:boolean=false;
 
   @ViewChild('videoPlayer') videoplayer: ElementRef;
   videoSource: string="assets/video.mp4";
@@ -34,7 +38,8 @@ export class StudentPageComponent implements OnInit {
                private loginService:LoginService,
                private snackBar:MatSnackBar,
                private questionService:QuestionService,
-               private datePipe: DatePipe) {
+               private datePipe: DatePipe,
+               private forumService:QuestionService) {
     this.route.queryParams.subscribe(params => {
       this.connectedUser = params['id'];
       console.log(this.connectedUser)
@@ -45,7 +50,17 @@ export class StudentPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.findMyQuestions(this.connectedUser).subscribe((res) => {
+
+    /*this.questionService.findMyQuestions(this.connectedUser).subscribe((res) => {
+
+        this.myQuestionsList = res;
+        console.log(this.myQuestionsList)
+
+      },
+      (_error) => {
+
+      });*/
+    this.questionService.findAllQuestions().subscribe((res) => {
 
         this.myQuestionsList = res;
         console.log(this.myQuestionsList)
@@ -80,6 +95,25 @@ get question(){
     this.connectedUser='-1';
     this.userLoggedIn=false;
     this.router.navigate(["/login"]);
+  }
+  get response(){
+    return this.responseForm.get('response');
+  }
+  respondToQuestion(id:number){
+    this.show=true;
+    if(this.show) {
+      this.forumService.sendResponseFromUser(Number(this.connectedUser),id, this.response.value).subscribe((res: any) => {
+      });
+    }
+
+
+  }
+  showResponseForm(){
+    this.showEdit = !this.showEdit;
+    if(this.showEdit){
+      this.responseForm=this.formBuilder.group({
+        response:['', [Validators.required]],
+      });}
   }
 
   subscribeToNotifications(){

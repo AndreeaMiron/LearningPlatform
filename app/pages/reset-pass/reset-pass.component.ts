@@ -55,7 +55,6 @@ initResetForm(){
       },
       (_error) => {
         alert('User not found');
-        return false;
       });
     return true;
   }

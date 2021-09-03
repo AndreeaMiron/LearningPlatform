@@ -8,7 +8,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="center-container">
+<!--<div class="center-container">
   <div class="display-block">
 
     <div id="forum">
@@ -33,6 +33,38 @@
             </form>
             </ng-container>
             </mat-list-item>
+        </mat-list>
+      </form>
+    </div>
+
+  </div>
+</div>-->
+
+<div class="center-container">
+  <div class="display-block">
+
+    <div id="forum">
+      <form [formGroup]="questions">
+        <mat-list>
+          <div mat-subheader>Intrebarile dumneavoastra: </div>
+          <mat-list-item *ngFor="let itm of questionsList" style="color:black;">
+            <div mat-line>Intrebare {{itm.id}} pusa de {{itm.userDetails}} la data de {{itm.date}}</div>
+            <div mat-line>{{itm.question}}</div>
+
+            <button mat-button (click)="deleteQuestion(itm.id)" >Delete</button>
+            <button mat-button (click)="showResponseForm()" id="showResponseForm">Respond</button>
+            <ng-container *ngIf="showEdit">
+              <form [formGroup]="responseForm" (submit)="respondToQuestion(itm.id)">
+                <mat-form-field class="form-field" appearance="outline">
+                  <mat-label>Your response:</mat-label>
+                  <input matInput formControlName="response" required>
+                  <div *ngIf="notshow" style="color:red">{{itm.status}}</div>
+                  <div *ngIf="show" style="color:green">{{itm.status}}</div>
+                </mat-form-field>
+                <button mat-button type="submit">Send!</button>
+              </form>
+            </ng-container>
+          </mat-list-item>
         </mat-list>
       </form>
     </div>
