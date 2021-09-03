@@ -27,12 +27,15 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private SendMailServiceImpl service;
+
     @Override
     public LoginSuccesDTO login(CredentialsDTO dto) throws ApiExceptionResponse {
         User user=userRepository.findFirstByEmail(dto.getEmail());
         if(user == null) {
 
-            throw ApiExceptionResponse.builder().errors(Collections.singletonList("Wrong username"))
+            throw ApiExceptionResponse.builder().errors(Collections.singletonList("Wrong email"))
                     .message("User not found").status(HttpStatus.NOT_FOUND).build();
 
         }
@@ -66,10 +69,25 @@ public class LoginServiceImpl implements LoginService {
     }
     @Override
     public boolean logout(String dto){
-        hm.replace(Long.parseLong(dto),1,-1);
+        //hm.replace(Long.parseLong(dto),1,-1);
         return true;
     }
 
+    @Override
+    public boolean changePassword(CredentialsDTO dto) throws ApiExceptionResponse {
+        User user=userRepository.findFirstByEmail(dto.getEmail());
+        if(user == null) {
+
+            throw ApiExceptionResponse.builder().errors(Collections.singletonList("Wrong email"))
+                    .message("User not found").status(HttpStatus.NOT_FOUND).build();
+
+        }
+
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        userRepository.save(user);
+        service.sendEmail(dto.getEmail(),dto.getPassword());
+        return false;
+    }
 
 
 }

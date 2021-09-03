@@ -9,5 +9,6 @@ import org.springframework.stereotype.Component;
 public interface LoginService {
     LoginSuccesDTO login(CredentialsDTO dto) throws ApiExceptionResponse;
     boolean logout(String sto);
+    boolean changePassword(CredentialsDTO dto ) throws ApiExceptionResponse;
 
 }

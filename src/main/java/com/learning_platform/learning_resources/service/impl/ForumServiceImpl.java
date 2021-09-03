@@ -4,7 +4,9 @@ import com.learning_platform.learning_resources.constants.NotificationEndpoints;
 import com.learning_platform.learning_resources.dto.QuestionCredentials;
 import com.learning_platform.learning_resources.dto.ResponseCredentials;
 import com.learning_platform.learning_resources.exceptions.ApiExceptionResponse;
+import com.learning_platform.learning_resources.model.Admin;
 import com.learning_platform.learning_resources.model.ForumQuestion;
+import com.learning_platform.learning_resources.model.Student;
 import com.learning_platform.learning_resources.model.User;
 import com.learning_platform.learning_resources.repository.ForumQuestionRepository;
 import com.learning_platform.learning_resources.repository.UserRepository;
@@ -16,8 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ForumServiceImpl implements ForumService {
@@ -30,11 +31,15 @@ public class ForumServiceImpl implements ForumService {
     @Autowired
     private SimpMessagingTemplate template;
 
+    List<ForumQuestion> questions = new ArrayList<>();
+    List<Student> students= new ArrayList<>();;
+
+
     @Override
     public ForumQuestion getForumQuestion(QuestionCredentials dto) throws ApiExceptionResponse {
-        User user=userRepository.findFirstById(Long.parseLong(dto.getConnectedUser()));
+        Student stud= (Student) userRepository.findFirstById(Long.parseLong(dto.getConnectedUser()));
 
-        if(user==null) {
+        if(stud==null) {
 
             throw ApiExceptionResponse.builder().errors(Collections.singletonList("Bad question"))
                     .message("User not found exists").status(HttpStatus.NOT_FOUND).build();
@@ -50,20 +55,46 @@ public class ForumServiceImpl implements ForumService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime questionDateTime = LocalDateTime.parse(date, formatter);
 
-        ForumQuestion fq=ForumQuestion.builder().question(dto.getQuestion()).user(user).date(questionDateTime).build();
-        this.template.convertAndSend(NotificationEndpoints.ADMIN_RECEIVE_QUESTION,"You have a new question ");
+        ForumQuestion fq=ForumQuestion.builder().question(dto.getQuestion()).date(questionDateTime).status("waiting..").build();
         forumRepository.save(fq);
+
+        stud.getQuestions().add(fq);
+        userRepository.save(stud);
+
+
+        this.template.convertAndSend(NotificationEndpoints.ADMIN_RECEIVE_QUESTION + 1L,"You have a new question ");
+
+        //adaug intrebarea si userul simultan
+        questions.add(fq);
+        students.add(stud);
         return fq;
     }
 
+
     @Override
     public List<ForumQuestion> findAll() {
-        return (List<ForumQuestion>) forumRepository.findAll();
+        return this.questions;
+    }
+
+    public int getQuestionIndex(Long id){
+        int index=0;
+        for(ForumQuestion fq:questions){
+            if(fq != null && fq.getId()==id)
+                return index;
+            index++;
+        }
+        return -1;
     }
 
     @Override
     public ForumQuestion deleteQuestion(Long id) {
         ForumQuestion fq=forumRepository.findFirstById(id);
+        int index=getQuestionIndex(id);
+        Student stud= (Student) userRepository.findFirstById(students.get(index).getId());
+        stud.getQuestions().remove(index);
+        userRepository.save(stud);
+        questions.remove(index);
+        students.remove(index);
         forumRepository.delete(fq);
         return fq;
     }
@@ -81,8 +112,35 @@ public class ForumServiceImpl implements ForumService {
         }
 
         fq.setAnswer(answer);
+        fq.setStatus("answered");
         forumRepository.save(fq);
+        int index=getQuestionIndex(dto.getId());
+        questions.remove(index);
+        questions.add(index,fq);
         return fq;
 
     }
+
+    @Override
+    public List<Student> getUsersWithQuestions() {
+
+        return this.students;
+    }
+
+    @Override
+    public List<ForumQuestion> findMyQuestions(Long id) throws ApiExceptionResponse {
+        Student stud= (Student) userRepository.findFirstById(id);
+
+        if(stud==null) {
+
+            throw ApiExceptionResponse.builder().errors(Collections.singletonList("Bad question"))
+                    .message("User not found exists").status(HttpStatus.NOT_FOUND).build();
+
+        }
+        List<ForumQuestion> my=stud.getQuestions();
+        System.out.println(my.get(0).getAnswer());
+        return stud.getQuestions();
+    }
+
+
 }

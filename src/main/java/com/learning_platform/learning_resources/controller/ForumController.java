@@ -30,6 +30,10 @@ public class ForumController {
     public ResponseEntity findAllQuestions() {
         return ResponseEntity.status(HttpStatus.OK).body(forumService.findAll());
     }
+    @GetMapping()
+    public ResponseEntity findAllUsersWithQuestions() {
+        return ResponseEntity.status(HttpStatus.OK).body(forumService.getUsersWithQuestions());
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteQuestionById(@PathVariable Long id) {
@@ -40,5 +44,11 @@ public class ForumController {
     public ResponseEntity respondToQuestion(@RequestBody ResponseCredentials dto) throws ApiExceptionResponse
     {
         return ResponseEntity.status(HttpStatus.OK).body(forumService.respondToQuestion(dto));
+    }
+
+    @GetMapping("/myquestions/{connectedUser}")
+    public ResponseEntity findMyQuestions(@PathVariable Long connectedUser) throws ApiExceptionResponse {
+
+        return ResponseEntity.status(HttpStatus.OK).body(forumService.findMyQuestions(connectedUser));
     }
 }

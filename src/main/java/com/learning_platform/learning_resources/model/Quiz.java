@@ -3,7 +3,6 @@ package com.learning_platform.learning_resources.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -11,14 +10,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class ForumQuestion {
+public class Quiz {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String question;
-    private String answer;
-    private LocalDateTime date;
-    private String status;
-
+    private int correct;
 }

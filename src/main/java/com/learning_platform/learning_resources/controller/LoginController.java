@@ -27,4 +27,9 @@ public class LoginController {
         return ResponseEntity.status(HttpStatus.OK).body(loginService.logout(dto));
     }
 
+    @PostMapping("/newpassword")
+    public ResponseEntity changePassReq(@RequestBody CredentialsDTO dto) throws ApiExceptionResponse {
+        return ResponseEntity.status(HttpStatus.OK).body(loginService.changePassword(dto));
+    }
+
 }
