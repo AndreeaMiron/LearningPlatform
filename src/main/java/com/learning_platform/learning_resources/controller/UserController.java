@@ -21,8 +21,13 @@ public class UserController {
     public ResponseEntity getQuiz(@RequestBody QuizCredentials dto) throws ApiExceptionResponse {
         return ResponseEntity.status(HttpStatus.OK).body(userService.saveQuiz(dto));
     }
-    @GetMapping("/getuser/{email}")
+    /*@GetMapping("/getuser/{email}")
     public ResponseEntity findUser(String email) throws ApiExceptionResponse {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.findUserByEmail(email));
+    }*/
+
+    @GetMapping("/find")
+    public ResponseEntity findUserByEmail(String email) throws ApiExceptionResponse{
         return ResponseEntity.status(HttpStatus.OK).body(userService.findUserByEmail(email));
     }
 }

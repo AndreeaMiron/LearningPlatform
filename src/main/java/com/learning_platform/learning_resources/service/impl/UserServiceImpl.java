@@ -53,6 +53,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByEmail(String email) throws ApiExceptionResponse {
+        System.out.println(email);
         User user=userRepository.findFirstByEmail(email);
         if(user==null) {
 
@@ -60,6 +61,7 @@ public class UserServiceImpl implements UserService {
                     .message("User not found ").status(HttpStatus.NOT_FOUND).build();
 
         }
+        System.out.println(user.getEmail());
         return user;
 
     }

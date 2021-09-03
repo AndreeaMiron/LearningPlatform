@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="69.83333333333331" y="467.0">com.learning_platform.learning_resources.model.Student</node>
+    <node x="636.5166666666667" y="33.0">com.learning_platform.learning_resources.model.User</node>
+    <node x="0.0" y="110.0">com.learning_platform.learning_resources.model.Quiz</node>
+    <node x="601.0166666666667" y="511.0">com.learning_platform.learning_resources.model.Admin</node>
+    <node x="185.0" y="-166.0">com.learning_platform.learning_resources.model.ForumQuestion</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.learning_platform.learning_resources.model.Admin" target="com.learning_platform.learning_resources.model.ForumQuestion">
+      <point x="-142.0" y="-49.5" />
+      <point x="672.0166666666667" y="427.0" />
+      <point x="526.3333333333334" y="427.0" />
+      <point x="139.33333333333337" y="203.5" />
+    </edge>
+    <edge source="com.learning_platform.learning_resources.model.Student" target="com.learning_platform.learning_resources.model.User">
+      <point x="206.25" y="-93.5" />
+      <point x="523.5833333333333" y="447.0" />
+      <point x="743.0166666666667" y="447.0" />
+      <point x="-35.5" y="170.5" />
+    </edge>
+    <edge source="com.learning_platform.learning_resources.model.Admin" target="com.learning_platform.learning_resources.model.User">
+      <point x="142.0" y="-49.5" />
+      <point x="956.0166666666667" y="447.0" />
+      <point x="885.0166666666667" y="447.0" />
+      <point x="106.5" y="170.5" />
+    </edge>
+    <edge source="com.learning_platform.learning_resources.model.Student" target="com.learning_platform.learning_resources.model.Quiz">
+      <point x="-206.25" y="-93.5" />
+      <point x="111.08333333333331" y="447.0" />
+      <point x="39.5" y="447.0" />
+      <point x="-39.5" y="93.5" />
+    </edge>
+    <edge source="com.learning_platform.learning_resources.model.Student" target="com.learning_platform.learning_resources.model.ForumQuestion">
+      <point x="-41.25" y="-93.5" />
+      <point x="276.0833333333333" y="447.0" />
+      <point x="247.66666666666663" y="447.0" />
+      <point x="-139.33333333333337" y="203.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="357.5" y="27.5" />
+  <SelectedNodes>
+    <node>com.learning_platform.learning_resources.model.ForumQuestion</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
