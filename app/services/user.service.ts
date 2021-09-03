@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {RegisterCredentialsDTO} from '../model/RegisterCredentialsDTO';
 import {QuizCredentials} from '../model/QuizCredentials';
 import {ForumQuestion} from '../model/ForumQuestion';
@@ -20,12 +20,6 @@ export class UserService {
     return this.httpClient.post(this.baseURL,credentials);
   }
 
-  findUserByEmail(email:string){
-    return this.httpClient.get<User>(this.getUserURL+email);
-  }
 
-  /*findUserById(userId:number){
-    return this.httpClient.get<User>(this.getUserURL+userId);
-  }*/
 
 }

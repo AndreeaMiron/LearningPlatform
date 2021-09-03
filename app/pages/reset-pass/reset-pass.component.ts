@@ -47,19 +47,9 @@ initResetForm(){
   }
 
 
-  checkIfExists(){
-    this.userService.findUserByEmail(this.email.value).subscribe((res) => {
 
-        this.user = res;
-
-      },
-      (_error) => {
-        alert('User not found');
-      });
-    return true;
-  }
   save() {
-    if (this.checkIfExists()) {
+
       if (this.password1.value == this.password2.value)
         this.service.changePassword(this.email.value, this.password1.value).subscribe((res: any) => {
 
@@ -67,7 +57,7 @@ initResetForm(){
           alert('Wrong password, try again!');
         });
       this.router.navigate(['/login']);
-    }
+
   }
 
 }
