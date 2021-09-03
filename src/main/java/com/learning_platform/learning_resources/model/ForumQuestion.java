@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,5 +22,7 @@ public class ForumQuestion {
     private String answer;
     private LocalDateTime date;
     private String status;
+    private Long userId;
+    private String userDetails;
 
 }

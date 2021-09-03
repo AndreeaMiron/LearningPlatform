@@ -3,6 +3,7 @@ package com.learning_platform.learning_resources.controller;
 import com.learning_platform.learning_resources.dto.QuestionCredentials;
 import com.learning_platform.learning_resources.dto.RegisterCredentialsDTO;
 import com.learning_platform.learning_resources.dto.ResponseCredentials;
+import com.learning_platform.learning_resources.dto.UserResponseCredentials;
 import com.learning_platform.learning_resources.exceptions.ApiExceptionResponse;
 import com.learning_platform.learning_resources.service.ForumService;
 import com.learning_platform.learning_resources.service.RegisterService;
@@ -30,10 +31,11 @@ public class ForumController {
     public ResponseEntity findAllQuestions() {
         return ResponseEntity.status(HttpStatus.OK).body(forumService.findAll());
     }
-    @GetMapping()
+    /*
+    /*@GetMapping()
     public ResponseEntity findAllUsersWithQuestions() {
         return ResponseEntity.status(HttpStatus.OK).body(forumService.getUsersWithQuestions());
-    }
+    }*/
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteQuestionById(@PathVariable Long id) {
@@ -46,9 +48,15 @@ public class ForumController {
         return ResponseEntity.status(HttpStatus.OK).body(forumService.respondToQuestion(dto));
     }
 
-    @GetMapping("/myquestions/{connectedUser}")
+    @PutMapping("/user")
+    public ResponseEntity userRespondToQuestion(@RequestBody UserResponseCredentials dto) throws ApiExceptionResponse
+    {
+        return ResponseEntity.status(HttpStatus.OK).body(forumService.userRespondToQuestion(dto));
+    }
+
+    /*@GetMapping("/myquestions/{connectedUser}")
     public ResponseEntity findMyQuestions(@PathVariable Long connectedUser) throws ApiExceptionResponse {
 
         return ResponseEntity.status(HttpStatus.OK).body(forumService.findMyQuestions(connectedUser));
-    }
+    }*/
 }
