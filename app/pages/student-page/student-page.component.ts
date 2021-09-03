@@ -7,6 +7,7 @@ import SockJS from 'sockjs-client';
 import {Stomp} from '@stomp/stompjs';
 import {QuestionService} from '../../services/question.service';
 import {DatePipe} from '@angular/common';
+import {ForumQuestion} from '../../model/ForumQuestion';
 
 @Component({
   selector: 'app-student-page',
@@ -19,6 +20,8 @@ export class StudentPageComponent implements OnInit {
   stompClient:any;
   userLoggedIn:boolean=true;
   forum:FormGroup;
+  myQuestions:FormGroup;
+  myQuestionsList:ForumQuestion[];
   currentDate = new Date();
   date:string;
 
@@ -34,6 +37,7 @@ export class StudentPageComponent implements OnInit {
                private datePipe: DatePipe) {
     this.route.queryParams.subscribe(params => {
       this.connectedUser = params['id'];
+      console.log(this.connectedUser)
       if(Number(this.connectedUser) > 0)
         this.userLoggedIn=true;
     });
@@ -41,10 +45,26 @@ export class StudentPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.questionService.findMyQuestions(this.connectedUser).subscribe((res) => {
+
+        this.myQuestionsList = res;
+        console.log(this.myQuestionsList)
+
+      },
+      (_error) => {
+
+      });
     this.subscribeToNotifications();
     this.initForum();
+    this.initMyQuestionsForm();
 
   }
+
+  initMyQuestionsForm(){
+    this.myQuestions=this.formBuilder.group({});
+  }
+
+
 get question(){
     return this.forum.get('question');
 }
@@ -53,8 +73,7 @@ get question(){
   }
   submitForum(){
     this.date = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd HH:mm');
-   this.questionService.submitQuestion(this.question.value,this.connectedUser,this.date).subscribe((res:any)=>{});;
-
+    this.questionService.submitQuestion(this.question.value,this.connectedUser,this.date).subscribe((res:any)=>{});;
   }
   onLogout(){
     this.loginService.logout(this.connectedUser);
@@ -78,12 +97,15 @@ get question(){
     });
   }
   intro(){
-    //this.router.navigate(["/login/",this.connectedUser]);
-    this.router.navigate(['/introduction']);
+    this.router.navigate(['/introduction'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   view(){
-    //this.router.navigate(["/register/",this.connectedUser]);
-    this.router.navigate(['/register']);
+
+    this.router.navigate(['/register'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   toggleVideo() {
@@ -91,27 +113,80 @@ get question(){
   }
 
   head(){
-    this.router.navigate(['/head']);
+    this.router.navigate(['/head'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   paragraphs(){
-    this.router.navigate(['/paragraphs']);
+    this.router.navigate(['/paragraphs'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   attribute(){
-    this.router.navigate(['/attribute']);
+    this.router.navigate(['/attribute'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   quotes() {
-    this.router.navigate(['/quotes']);
+    this.router.navigate(['/quotes'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   colors() {
-    this.router.navigate(['/colors']);
+    this.router.navigate(['/colors'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   google(){
-    this.router.navigate(['/google']);
+    this.router.navigate(['/google'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   count(){
-    this.router.navigate(['/countdown']);
+    this.router.navigate(['/countdown'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+
+  tables(){
+    this.router.navigate(['/tables'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+  lists(){
+    this.router.navigate(['/lists'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+  blocks(){
+    this.router.navigate(['/blocks'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+  classes(){
+    this.router.navigate(['/classes'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+
+  menu(){
+    this.router.navigate(['/menu'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+
+  map() {
+    this.router.navigate(['/mapping'],{
+      queryParams: {id: this.connectedUser}
+    });
+  }
+
+  slide() {
+    this.router.navigate(['/slideshow'],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 }

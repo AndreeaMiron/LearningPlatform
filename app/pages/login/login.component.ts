@@ -64,4 +64,7 @@ export class LoginComponent implements OnInit {
   clickRegister(){
     this.router.navigate(['/register']);
   }
+  resetPassword(){
+    this.router.navigate(['/reset-pass']);
+  }
 }

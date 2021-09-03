@@ -27,6 +27,18 @@ backgroundPosition:'center'
     la un anumit eveniment important si mult asteptat. Vom vedea in cele ce urmeaza cum putem crea si noi o numaratoare inversa intr-un mod cat mai simplu cu ajutorul javascript-ului.
   </p>
 
+
+<br><br>
+
+<div id="id1">
+  <p class="p2"> 1.Creati un div caruia ii veti atribui o clasa, de exemplu timer</p>
+  <p class="p2"> 2.Declarati in fisierul css div-ul cu .timer, urmand apoi sa descrieti atributele acestei numaratori,
+    <br> de la cum arata scrisul, pana la cum va arata caseta  in care acesta va fi afisat.</p>
+  <img src="assets/timer.png" style="margin-left: 40px;">
+  <p class="p2">3.Adaugati tagurile de script in interiorul divului, apoi adaugati functia pentru numaratoarea inversa</p>
+  <p class="p2"> 4.Nu uitati sa inchideti tagul script!</p>
+</div>
+  <img src="assets/arrow.gif" style="margin-left: 600px;margin-top: -500px;"/>
   <div class="timer">
     <h4> Count down timer </h4>
     <span id="days"> {{daysToDday}} </span>Day(s)
@@ -34,52 +46,62 @@ backgroundPosition:'center'
     <span id="minutes"> {{minutesToDday}} </span>Min
     <span id="seconds"> {{secondsToDday}} </span>S
   </div>
+<br><br>
+  <div id="id2">
 
-<div id="pasi">
+    <p class="p2">Data pana la care facem numaratoarea: <span>var countDownDate = new Date("Dec,25 2021 00:00:00").getTime();</span></p>
 
-  <ol>
-    <li>
-      Creati un div caruia ii veti atribui o clasa, de exemplu timer
-    </li>
-    <li>
-      Declarati in fisierul css div-ul cu .timer, urmand apoi sa descrieti atributele acestei numaratori,<br> de la cum arata scrisul, pana la
-      cum va arata caseta  in care acesta va fi afisat.
+     <p class="p2">
+       La fiecare 1 secunda vom reinnoi numaratoarea, cu ajutorul functiei setInterval care reapeleaza function la fiecare o secunda:<br>
+       <span>var x = setInterval(function() {{ "{" }} </span>
 
-    </li>
-    <li>
-      Adaugati tagurile de script in interiorul divului, apoi adaugati urmatoarele:
+     </p>
+    <p class="p2">
+      In interiorul functiei <span>function</span> de mai sus urmeaza sa punem urmatoarele: <br>
+    </p>
       <ul>
+      <li>
+        Data si ora curenta <span style="color:white;"> var azi = new Date().getTime();</span>
+      </li>
         <li>
-          Data pana la care facem numaratoarea: <span>var countDownDate = new Date("June,25 2018 08:00:00").getTime();</span>
+          Calculam distanta dintre ziua de azi si ziua pana la care facem numaratoarea <span style="color:white;"> var distance = countDownDate - azi;</span>
         </li>
         <li>
-          La fiecare 1 secunda vom reinnoi numaratoarea: <span>var x = setInterval(function() {{ "{" }} </span>
+          Calculam timpul in zile,ore, minute si secunde<br>
+          <img src="assets/left.gif" id="left">
         </li>
         <li>
-          In interiorul functiei <span>function</span> de mai sus urmeaza sa punem urmatoarele: <br>
-          ●Data si ora curenta <span style="color:#F0108F;"> var azi = new Date().getTime();</span><br>
-          ●Calculam distanta dintre ziua de azi si ziua pana la care facem numaratoarea <span style="color:#F0108F;"> var distance = countDownDate - azi;</span><br>
-          ●Calculam timpul in zile,ore, minute si secunde :<br><hr>
-          <span style="color:#FF0040;">var zile = Math.floor(distance / (1000 * 60 * 60 * 24));</span><br><hr>
-          <span style="color:#FF0040;">var ore = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</span><br><hr>
-          <span style="color:#FF0040;">var minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</span><br><hr>
-          <span style="color:#FF0040;">var secunde = Math.floor((distance % (1000 * 60)) / 1000);</span><br>
-          <hr>
-          ●Afisam rezultatul in elementul de tip id cu numele "numaratoare"-<span style="color:#FF0040;">document.getElementById("demo").innerHTML = zile + "z " + ore + "o "
-    + minute + "m " + secunde + "s ";</span><br>
-          ●Cand numaratoarea s a terminat,adaugam un text:-<span style="color:#FF0040;">if (distance < 0) clearInterval(x);
-          document.getElementById("demo").innerHTML = "Timpul a expirat";}}, 1000);</span>
+          Afisam rezultatul in elementul de tip id cu numele "timer"-<span style="color:white;">document.getElementById("timer").innerHTML = zile + "z " + ore + "o "
+    + minute + "m " + secunde + "s ";</span>
+        </li>
+        <li>
+          Cand numaratoarea s a terminat, adaugam un text:-<span style="color:white;">if (distance < 0) clearInterval(x);
+          document.getElementById("timer").innerHTML = "Timpul a expirat";}}, 1000);</span>
         </li>
       </ul>
-    </li>
-    <li>
-      Nu uitati sa inchideti tagul script!
-    </li>
-  </ol>
-  <img src="assets/timer.png">
+  </div>
+
+<br>
+  <br>
+  <br>
+  <br>
+    <div id="id3">
+      <table>
+        <tr>var zile = Math.floor(distance / (1000 * 60 * 60 * 24));</tr>
+<br><hr>
+        <tr>var ore = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</tr>
+<br><hr>
+        <tr>var minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</tr>
+<br><hr>
+        <tr>var secunde = Math.floor((distance % (1000 * 60)) / 1000);</tr>
+      </table>
+
+    </div>
+
+
+<div style="height:400px;">
+
 </div>
-
-
 
 
 </div>

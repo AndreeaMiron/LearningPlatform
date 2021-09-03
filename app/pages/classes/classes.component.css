@@ -1,0 +1,67 @@
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}
+.p2{font-size:15px;
+  color:black;
+  text-indent: 45px;
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+span {color:whitesmoke;
+}
+
+.etichete{
+  font-family: cursive;
+  color:black;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+#id1{
+  margin-left: 100px;
+  width: 500px;
+  height: 660px;
+  border:5px solid white;
+}
+
+#top1{
+  width: 495px;
+  height: 50px;
+  color:black;
+  background-color:#9A4871;
+  border:5px solid white;
+}
+
+
+#id2{
+  margin-left: 300px;
+  width: 900px;
+  height: 200px;
+  border:5px solid white;
+}
+
+#id3{
+  margin-left: 700px;
+  width: 700px;
+  height: 690px;
+  border:5px solid white;
+}
+
+#top3{
+  width: 695px;
+  height: 50px;
+  color:black;
+  background-color:#9A4871;
+  border:5px solid white;
+}
+
+

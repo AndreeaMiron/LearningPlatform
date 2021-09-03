@@ -15,21 +15,24 @@
       <form [formGroup]="questions">
         <mat-list>
           <div mat-subheader>Intrebarile dumneavoastra: </div>
-          <mat-list-item *ngFor="let itm of questionsList" style="color:black;">
-            <div mat-line>Intrebare pusa de {{itm.user.firstName}} la data de {{itm.date}}</div>
-            <div mat-line>{{itm.id}} {{itm.question}} </div>
-            <button mat-button (click)="deleteQuestion(itm.id)" >Delete</button>
+          <mat-list-item *ngFor="let itm of usersList;let i=index" style="color:black;">
+            <div mat-line>Intrebare {{i}} pusa de {{itm.firstName}} {{itm.lastName}} la data de {{questionsList[i].date}}</div>
+            <div mat-line>{{questionsList[i].id}}  {{questionsList[i].question}}</div>
+
+            <button mat-button (click)="deleteQuestion(questionsList[i].id)" >Delete</button>
             <button mat-button (click)="showResponseForm()" id="showResponseForm">Respond</button>
             <ng-container *ngIf="showEdit">
-            <form [formGroup]="responseForm" (submit)="respondToQuestion(itm.id)">
+            <form [formGroup]="responseForm" (submit)="respondToQuestion(questionsList[i].id)">
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Your response:</mat-label>
                 <input matInput formControlName="response" required>
+                <div *ngIf="notshow" style="color:red">{{questionsList[i].status}}</div>
+                <div *ngIf="show" style="color:green">{{questionsList[i].status}}</div>
               </mat-form-field>
               <button mat-button type="submit">Send!</button>
             </form>
             </ng-container>
-          </mat-list-item>
+            </mat-list-item>
         </mat-list>
       </form>
     </div>

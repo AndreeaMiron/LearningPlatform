@@ -23,11 +23,10 @@
         <button mat-menu-item (click)="attribute()">Atribute/Styling</button>
         <button mat-menu-item (click)="quotes()">Citate/Comentarii</button>
         <button mat-menu-item (click)="colors()">Culori/Imagini</button>
-        <button mat-menu-item (click)="view()">Tabele</button>
-        <button mat-menu-item (click)="view()">Liste</button>
-        <button mat-menu-item (click)="view()">Blocuri</button>
-        <button mat-menu-item (click)="view()">Clase/Id-uri</button>
-        <button mat-menu-item (click)="view()">Iframe/Layout</button>
+        <button mat-menu-item (click)="tables()">Tabele</button>
+        <button mat-menu-item (click)="lists()">Liste</button>
+        <button mat-menu-item (click)="blocks()">Blocuri</button>
+        <button mat-menu-item (click)="classes()">Clase/Id-uri</button>
       </mat-menu>
 
       <button mat-button [matMenuTriggerFor]="menuCSS">CSS</button>
@@ -40,6 +39,9 @@
       <mat-menu #menuApp="matMenu">
         <button mat-menu-item (click)="google()">Integrare Google map</button>
         <button mat-menu-item (click)="count()">Countdown</button>
+        <button mat-menu-item (click)="map()">Mapare imagini</button>
+        <button mat-menu-item (click)="menu()">Creare meniu</button>
+        <button mat-menu-item (click)="slide()">Slideshow</button>
 
       </mat-menu>
 
@@ -71,7 +73,24 @@
     </mat-card>
 
   </div>
-<br><br><br><br><br><br><br>
+
+  <div class="myQuestions" style="width:800px;height:600px;">
+    <mat-card>
+      <mat-card-title>Your questions:
+      </mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="myQuestions">
+          <mat-list>
+            <mat-list-item *ngFor="let itm of myQuestionsList" style="color:black;">
+              <div mat-line>Intrebare: {{itm.question}} </div>
+              <div mat-line>Raspuns: {{itm.answer}} </div>
+            </mat-list-item>
+              </mat-list>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -60,14 +60,20 @@ export class CountdownComponent implements OnInit,OnDestroy {
   }
 
   next(){
-    this.router.navigate(["/countdown"]);
+    this.router.navigate(["/mapping"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   home(){
-    this.router.navigate(["/student-page"]);
+    this.router.navigate(["/student-page"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   back(){
-    this.router.navigate(["/google"]);
+    this.router.navigate(["/google"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
 }

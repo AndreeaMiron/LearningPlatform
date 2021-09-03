@@ -1,0 +1,84 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <div id="left">
+
+  </div>
+  <div id="right">
+
+  </div>
+<br><br>
+  <div id="id1">
+    <div  id="top1">
+      <p class="etichete" style="margin-top: 20px;"> < Table > </p>
+    </div>
+    <p class="p2">Un tabel se defineste prin tagul <span>< table ></span>.</p>
+    <p class="p2"> Fiecare RAND din tabel se defineste cu tagul <span> < tr > </span> (table row).</p>
+    <p class="p2">Fiecare COLOANA,care reprezinta capul de tabel se defineste cu tagul <span>< th ></span> (table head).Capurile de tabel au fost create sa se pozitioneze pe centrul celulei. Celulele se definesc cu tagul <span> < td ></span> (table data).
+      TOT ce se pune intre tagurile td reprezinta date din tabel.</p>
+
+  </div>
+<br><br>
+  <img src="assets/table.png" style="margin-left: 950px;margin-top: -300px;"/>
+
+
+
+<br><br>
+  <table id="t1">
+    <tr>
+      <th>R1   Th1</th>
+      <th>     Th2</th>
+      <th>     Th3</th>
+    </tr>
+    <tr>
+      <td>R2   Td1</td>
+      <td>     Td2</td>
+      <td>     Td3</td>
+    </tr>
+    <tr>
+      <td>R3   Td1</td>
+      <td>     Td2</td>
+      <td>     Td3</td>
+    </tr>
+
+  </table>
+
+<br><br><br><br>
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;"> Styling </p>
+    </div>
+    <p class="p2">Fiecare dintre elementele tabelului poate avea anumite proprietati, de exemplu, pozitia textului in celula sau distanta fata de margine. Acestea actiuni se vor face in fisierul stylesheet.css, astfel:</p>
+    <p class="p2"><span>td{{ '{' }}text-align = left; padding:5px;}</span></p>
+    <p class="p2">● Pentru a face o celula sa se imparta pe mai multe coloane, veti adauga coloanei extensia <span><b>< th colspan="x"></b></span>, iar acel rand va avea pentru acea coloana x celule.</p>
+    <p class="p2">● Pentru a face o celula sa se imparta pe mai multe randuri, veti proceda la fel ca si la coloane, doar ca in loc de colspan, veti modifica in rowspan.</p>
+    <p class="p2">● Daca doriti sa adaugati anumite proprietati tabelului, de exemplu o culoare, un tip de text sau multe altele, va trebui sa ii acordati un <span>id</span>. Potrivit acestuia, tabelul va putea fi stilizat in mod unic conform id-ului, fara a le schimba pe celelalte.</p>
+
+  </div>
+  <img src="assets/tabel.gif" style="width:650px;height:300px;margin-left:50px;margin-top: -700px;"/>
+<br><br>
+</div>

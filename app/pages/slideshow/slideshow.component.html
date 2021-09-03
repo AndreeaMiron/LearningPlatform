@@ -1,0 +1,23 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#BA93A9',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+</div>

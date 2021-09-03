@@ -3,30 +3,28 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 
 @Component({
-  selector: 'app-attribute',
-  templateUrl: './attribute.component.html',
-  styleUrls: ['./attribute.component.css'
+  selector: 'app-lists',
+  templateUrl: './lists.component.html',
+  styleUrls: ['./lists.component.css'
   ]
 })
-export class AttributeComponent implements OnInit {
+export class ListsComponent implements OnInit {
   connectedUser:string;
   userLoggedIn:boolean=true;
-
-
   constructor(private router:Router,
               private route: ActivatedRoute,
               @Inject(DOCUMENT) private document: Document) {
     this.route.queryParams.subscribe(params => {
-    this.connectedUser = params['id'];
-    if(Number(this.connectedUser) > 0)
-      this.userLoggedIn=true;
-  }); }
+      this.connectedUser = params['id'];
+      if(Number(this.connectedUser) > 0)
+        this.userLoggedIn=true;
+    });
+  }
 
   ngOnInit(): void {
   }
-
   next(){
-    this.router.navigate(["/quotes"],{
+    this.router.navigate(["/blocks"],{
       queryParams: {id: this.connectedUser}
     });
   }
@@ -40,8 +38,13 @@ export class AttributeComponent implements OnInit {
     });
   }
   back(){
-    this.router.navigate(["/paragraphs"],{
+    this.router.navigate(["/tables"],{
       queryParams: {id: this.connectedUser}
     });
   }
+menu(){
+  this.router.navigate(["/menu"],{
+    queryParams: {id: this.connectedUser}
+  });
+}
 }

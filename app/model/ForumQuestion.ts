@@ -5,5 +5,6 @@ export class ForumQuestion{
  question: string;
   answer: string;
   date:Date;
-  user:User;
+  status:string;
+
 }

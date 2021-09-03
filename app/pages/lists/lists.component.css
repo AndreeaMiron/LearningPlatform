@@ -20,92 +20,91 @@ span {color:whitesmoke;
 
 .etichete{
   font-family: cursive;
-  color:black;
+  color:white;
   text-align: center;
   margin-left: 10px;
   font-size: 20px;
   margin-top: 10px;
 }
-
-.stanga{
-  border:5px solid white;
-  width: 450px;
-  height: 570px;
-  margin-top: 90px;
-  margin-left: 200px;
-
-}
-
-.topdiv{
-  width: 440px;
-  height: 50px;
-  color:black;
-  background-color: #C6E709;
-  border:5px solid white;
-}
-.dreapta{
-
-  border:5px solid white;
-  width: 450px;
-  height: 510px;
-  margin-top: -610px;
-  margin-left: 870px;
-
-}
-
-.topdiv2{
-  width: 440px;
-  height: 50px;
-  color:black;
-  background-color: #FF008F;
-  border:5px solid white;
-}
-
 #id1{
-  margin-left: 400px;
-  width: 500px;
-  height: 670px;
+  margin-left: 100px;
+  width: 550px;
+  height: 410px;
   border:5px solid white;
+  margin-top: -250px;
 }
 
 #top1{
-  width: 495px;
+  width: 545px;
   height: 50px;
-  text-align: center;
-  color:white;
-  background-color:#0E7B72;
+  color:black;
+  background-color:#9A4871;
   border:5px solid white;
 }
 
-
 #id2{
-  margin-left: 400px;
-  width: 500px;
-  height: 470px;
+  margin-left: 700px;
+  width: 700px;
+  height: 210px;
   border:5px solid white;
+  margin-top: -150px;
 }
 
 #top2{
-  width: 495px;
+  width: 695px;
   height: 50px;
-  text-align: center;
-  color:white;
-  background-color:#0E237B;
+  color:black;
+  background-color:#9A4871;
   border:5px solid white;
 }
 
+
 #id3{
-  margin-left: 400px;
-  width: 500px;
-  height: 370px;
+  margin-left: 100px;
+  width: 400px;
+  height: 210px;
   border:5px solid white;
+
 }
 
 #top3{
-  width: 495px;
+  width: 395px;
   height: 50px;
-  text-align: center;
-  color:white;
-  background-color:#7B0E3E;
+  color:black;
+  background-color:#9A4871;
+  border:5px solid white;
+}
+
+
+#id4{
+  margin-left: 650px;
+  width: 300px;
+  height: 310px;
+  border:5px solid white;
+  margin-top: -365px;
+}
+
+#top4{
+  width: 295px;
+  height: 55px;
+  color:black;
+  background-color:#9A4871;
+  border:5px solid white;
+}
+
+
+#id5{
+  margin-left: 1100px;
+  width: 300px;
+  height: 210px;
+  border:5px solid white;
+margin-top:-320px;
+}
+
+#top5{
+  width: 295px;
+  height: 50px;
+  color:black;
+  background-color:#9A4871;
   border:5px solid white;
 }

@@ -1,0 +1,89 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+
+  <div id="id1">
+    <div  id="top1">
+      <p class="etichete" style="margin-top: 20px;"> Class </p>
+    </div>
+    <p class="p2">Atributul <span>class</span> specifica unul sau mai multe nume ale unor clase pentru elementele HTML. Numele clasei poate fi folosit de CSS si JavaScript <span>pentru a efectua anumite sarcini asupra elementelor care fac parte din acea clasa</span>.
+      Cand folosim CSS, pentru a selecta elementele dintr-o clasa cu un anumit nume, vom scrie in stylesheet (sau intre tagurile style din interiorul head-ului) caracterul "." urmat de numele pe care l-am acordat clasei:</p>
+    <p class="p2">Pentru a intelege si a vedea diferenta avem urmatorul exemplu:</p>
+    <img src="assets/right.gif" style="width:100px;height: 100px; margin-left: 600px;">
+    <img src="assets/p50.png" style="margin-left: 730px;margin-top: -200px;">
+    <img src="assets/p51.png" style="width:501px;height: 400px;margin-top: -500px;">
+  </div>
+
+  <img src="assets/arrow.gif" style="width:200px;height: 200px; margin-left: 600px;">
+  <div id="id2">
+
+    <p class="p2"> Dupa cum puteti observa, tagurile de tip p care nu au primit atributul class,se vor afisa normal, in schimb celelalte vor fi afisate cu stilurile pe care le-au primit. <span>TOATE</span> tagurile care au numele unei anumite clase vor avea aceleasi proprietati. Pentru a diferentia doar o culoare, sau un tip de text, se va crea o clasa noua, cu un nume nou. </p>
+    <p class="p2">Pentru a combina cele doua clase, atributului class i se vor atribui ambele nume ale claselor, despartite doar prin cate un spatiu, astfel el le va combina proprietatile pe cat posibil.</p>
+    <p class="p2">Nu uitati ca atributul class poate fi folosit si in JavaScript, pentru diferite functii. Apasati <button mat-menu-item (click)="classVsId()"> aici </button> pentru a vedea despre ce este vorba.</p>
+
+  </div>
+
+<br><br>
+
+  <div id="id3">
+    <div  id="top3">
+      <p class="etichete" style="margin-top: 20px;"> Id </p>
+    </div>
+    <p class="p2">Atributul "id" specifica un id <span>UNIC</span> pentru un element HTML <span>(valoarea trebuie sa fie unica in cadrul documentului HTML!)</span>.
+      Ce inseamna valoare unica? Inseamna ca in cadrul unui document, putem avea mai multe elemente care au un id, dar numele atribuit id-urilor respective
+      trebuie sa fie unic.
+    </p>
+
+      <p class="p2">Cand folosim CSS, pentru a selecta elementele cu un id specific, vom scrie in stylesheet sau in style caracterul "#", urmat de numele id-ului:</p>
+    <img src="assets/p52.png" style="margin-left:50px;">
+
+    <p class="p2">Un element HTML poate avea un singur id,unic,care apartine acelui singur element,in timp ce numele unei clase poate fi folosit de elemente multiple.</p>
+
+  </div>
+
+
+<div style="width:500px;margin-left: 50px;margin-top:-600px; border:3px dotted black;">
+  <h2><marquee behaviour="scroll" direction="right">Semne de carte folosind id-urile</marquee></h2>
+  <p class="p2">Semnele de carte HTML,numite "bookmarks" se folosesc pentru a le permite cititorilor sa sara la o parte specifica a paginii web.Acestea pot fi foarte folositoare,mai ales cand pagina este foarte lunga,de exemplu in cazul nostru.
+
+    Pentru a crea un astfel de semn, prima data trebuie sa creezi bookmark-ul, apoi sa ii adaugi un link.
+
+    Cand link-ul este apasat, pagina va cobori la locatia semnului de carte .Pentru a face acest lucru aveti de urmat cativa pasi simpli:</p>
+  <ol class="pasi">
+    <li>Creati semnul cu ajutorul atributului id:
+      <p class="p2"><span>< h2 id="C4" >Capitolul 4< / h2 ></span></p></li>
+    <li>Adaugati un link semnului de carte ("Mergi la capitolul 4"), de pe aceeasi pagina ,sau de pe o alta pagina:
+      <p class="p2"><span>< a href="#C4"> Mergi la capitolul 4 < / a ></span> sau  <span>< a href="*numele paginii*.html#C4"> Mergi la capitolul 4 < / a ></span></p>
+    </li>
+
+  </ol>
+  </div>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+</div>

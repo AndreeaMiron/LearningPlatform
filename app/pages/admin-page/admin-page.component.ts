@@ -7,6 +7,7 @@ import {LoginService} from '../../services/login.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ForumQuestion} from '../../model/ForumQuestion';
 import {QuestionService} from '../../services/question.service';
+import {User} from '../../model/User';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
@@ -20,7 +21,12 @@ export class AdminPageComponent implements OnInit {
   questions:FormGroup;
   responseForm:FormGroup;
   questionsList:ForumQuestion[];
+  usersList:User[];
   showEdit:boolean=false;
+  show:boolean=false;
+  notshow:boolean=true;
+
+
 
   constructor( private formBuilder:FormBuilder,
                private route: ActivatedRoute,
@@ -36,9 +42,23 @@ export class AdminPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.forumService.findAllQuestions().subscribe((res) => {
 
         this.questionsList = res;
+        console.log("Intrebari")
+        console.log(this.questionsList);
+
+
+      },
+      (_error) => {
+
+      });
+    this.forumService.findAllUsersWithQuestions().subscribe((res) => {
+
+        this.usersList = res;
+        console.log("Useri")
+        console.log(this.usersList);
 
       },
       (_error) => {
@@ -46,27 +66,22 @@ export class AdminPageComponent implements OnInit {
       });
 
     this.initQuestionsForm();
-    //this.intiRespondForm();
-    this.subscribeToNotifications();
+    this.subscribeToNotifications(this.connectedUser);
   }
   initQuestionsForm(){
     this.questions=this.formBuilder.group({
     })
   }
-  intiRespondForm(){
-    this.responseForm=this.formBuilder.group({
-      response:['', [Validators.required]],
-    })
-  }
+
   get response(){
     return this.responseForm.get('response');
   }
-  subscribeToNotifications(){
+  subscribeToNotifications(connectedUser:string){
     const URL="http://localhost:8080/socket";
     const websocket=new SockJS(URL);
     this.stompClient=Stomp.over(websocket);
     this.stompClient.connect({},()=>{
-      this.stompClient.subscribe('/topic/socket/admin-page', notification=>{
+      this.stompClient.subscribe('/topic/socket/admin-page/'+connectedUser, notification=>{
         let message=notification.body;
 
         this.snackBar.open(message,'Close',{
@@ -74,6 +89,9 @@ export class AdminPageComponent implements OnInit {
         })
       })
     });
+  }
+  ngOnDestroy(): void {
+    this.stompClient.disconnect();
   }
 
   onLogout(){
@@ -93,9 +111,13 @@ export class AdminPageComponent implements OnInit {
 
   }
   respondToQuestion(id:number){
-    this.forumService.sendResponse(id,this.response.value) .subscribe((res:any)=>{
-    });
-    this.deleteQuestion(id);
+    this.show=true;
+    this.notshow=false;
+    if(this.show) {
+      this.forumService.sendResponse(id, this.response.value).subscribe((res: any) => {
+      });
+    }
+
 
   }
   showResponseForm(){

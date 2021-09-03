@@ -3,35 +3,34 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 
 @Component({
-  selector: 'app-attribute',
-  templateUrl: './attribute.component.html',
-  styleUrls: ['./attribute.component.css'
+  selector: 'app-mapping',
+  templateUrl: './mapping.component.html',
+  styleUrls: ['./mapping.component.css'
   ]
 })
-export class AttributeComponent implements OnInit {
+export class MappingComponent implements OnInit {
   connectedUser:string;
   userLoggedIn:boolean=true;
-
-
+  display:boolean=false;
+  displayIcon:boolean=true;
   constructor(private router:Router,
               private route: ActivatedRoute,
               @Inject(DOCUMENT) private document: Document) {
     this.route.queryParams.subscribe(params => {
-    this.connectedUser = params['id'];
-    if(Number(this.connectedUser) > 0)
-      this.userLoggedIn=true;
-  }); }
+      this.connectedUser = params['id'];
+      if(Number(this.connectedUser) > 0)
+        this.userLoggedIn=true;
+    });
+  }
 
   ngOnInit(): void {
+
   }
 
   next(){
-    this.router.navigate(["/quotes"],{
+    this.router.navigate(["/menu"],{
       queryParams: {id: this.connectedUser}
     });
-  }
-  quiz(){
-    // this.router.navigate(["/intro-survey"]);
   }
 
   home(){
@@ -40,8 +39,13 @@ export class AttributeComponent implements OnInit {
     });
   }
   back(){
-    this.router.navigate(["/paragraphs"],{
+    this.router.navigate(["/countdown"],{
       queryParams: {id: this.connectedUser}
     });
+  }
+
+  displayFunction(){
+    this.display=!this.display;
+    this.displayIcon=true;
   }
 }

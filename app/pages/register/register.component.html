@@ -13,7 +13,7 @@
         </label>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Last name</mat-label>
-          <input matInput formControlName="lastName" name="lastName" [ngClass]="{ 'is-invalid': lastName.invalid }" required minlength="7">
+          <input matInput formControlName="lastName" name="lastName" [ngClass]="{ 'is-invalid': lastName.invalid }" required minlength="3">
           <div class="invalid-feedback" *ngIf="lastName.errors">
             <div *ngIf="lastName.errors.required" style="color:red">Name is required</div>
             <div *ngIf="lastName.errors.minlength" style="color:red">Name too short</div>
@@ -21,7 +21,7 @@
         </mat-form-field>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>First name</mat-label>
-          <input matInput formControlName="firstName" name="firstName" [ngClass]="{ 'is-invalid': firstName.invalid }" required minlength="7" >
+          <input matInput formControlName="firstName" name="firstName" [ngClass]="{ 'is-invalid': firstName.invalid }" required minlength="3" >
           <div class="invalid-feedback" *ngIf="firstName.errors">
             <div *ngIf="firstName.errors.required" style="color:red">Name is required</div>
             <div *ngIf="firstName.errors.minlength" style="color:red">Name too short</div>
@@ -29,7 +29,7 @@
         </mat-form-field>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput formControlName="email" name="email" [ngClass]="{ 'is-invalid': firstName.invalid }" required minlength="10" >
+          <input matInput formControlName="email" name="email" [ngClass]="{ 'is-invalid': email.invalid }" required minlength="5" >
           <div class="invalid-feedback" *ngIf="email.errors">
             <div *ngIf="email.errors.required" style="color:red">Email is required</div>
             <div *ngIf="email.errors.minlength" style="color:red">Email too short</div>
@@ -37,7 +37,7 @@
         </mat-form-field>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput formControlName="password" name="password" [ngClass]="{ 'is-invalid': firstName.invalid }" required minlength="3" >
+          <input matInput formControlName="password" name="password" [ngClass]="{ 'is-invalid': password.invalid }" required minlength="8" >
           <div class="invalid-feedback" *ngIf="password.errors">
             <div *ngIf="password.errors.required" style="color:red">Password is required</div>
             <div *ngIf="password.errors.minlength" style="color:red">Password too short</div>
@@ -45,7 +45,7 @@
         </mat-form-field>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Phone nr</mat-label>
-          <input matInput formControlName="phoneNr" name="phoneNr" [ngClass]="{ 'is-invalid': firstName.invalid }" required minlength="10" >
+          <input matInput formControlName="phoneNr" name="phoneNr" [ngClass]="{ 'is-invalid': phoneNr.invalid }" required minlength="10" >
           <div class="invalid-feedback" *ngIf="phoneNr.errors">
             <div *ngIf="phoneNr.errors.required" style="color:red">Phone number is required</div>
             <div *ngIf="phoneNr.errors.minlength" style="color:red">Phone number too short</div>

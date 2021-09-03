@@ -3,6 +3,9 @@ import * as Survey from "survey-angular";
 import "survey-angular/survey.css";
 import {Output} from '@angular/core';
 import {Input} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
+import {any} from 'codelyzer/util/function';
 Survey.StylesManager.applyTheme("default");
 
 @Component({
@@ -12,46 +15,65 @@ Survey.StylesManager.applyTheme("default");
   ]
 })
 export class IntroSurveyComponent implements OnInit {
+  public connectedUser:number;
+  userLoggedIn:boolean=false;
+
+
   @Output() submitSurvey = new EventEmitter<any>();
   @Input()
   result: any;
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private router:Router,
+              private userService:UserService
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.connectedUser = params['id'];
+      if (Number(this.connectedUser) > 0)
+        this.userLoggedIn = true;
+    });
+  }
 
   ngOnInit(): void {
+
+    let g;
     const json = {
-      title: "HTML Basics",
-      showProgressBar: "bottom",
-      showTimerPanel: "top",
+      title: 'HTML Basics',
+      showProgressBar: 'bottom',
+      showTimerPanel: 'top',
       maxTimeToFinishPage: 15,
       maxTimeToFinish: 45,
       firstPageIsStarted: true,
-      startSurveyText: "Start Quiz",
+      startSurveyText: 'Start Quiz',
       pages: [
-        { questions: [ {type: "html", html: "<br/>Timpul efectiv pentru a raspunde la o intrebare este de 30 secunde, testul contine 3 intrebari." +
-              "<br/>Apasa pe  <b>'Start Quiz'</b> cand esti pregatit sa incepi." } ] },
+        {
+          questions: [{
+            type: 'html', html: '<br/>Timpul efectiv pentru a raspunde la o intrebare este de 30 secunde, testul contine 3 intrebari.' +
+              '<br/>Apasa pe  <b>\'Start Quiz\'</b> cand esti pregatit sa incepi.'
+          }]
+        },
         {
           questions: [
             {
-              type: "checkbox",
-              name: "q1",
+              type: 'checkbox',
+              name: 'q1',
               isRequired: true,
               hasNone: true,
-              choicesOrder: "random",
-              title: "Care dintre urmatoarele taguri nu necesita sa fie inchise?",
-              choices: [ "meta", "img", "hr", "br", "input","p","head","title" ],
-              correctAnswer: ["meta","img","hr","br","input"]
+              choicesOrder: 'random',
+              title: 'Care dintre urmatoarele taguri nu necesita sa fie inchise?',
+              choices: ['meta', 'img', 'hr', 'br', 'input', 'p', 'head', 'title'],
+              correctAnswer: ['meta', 'img', 'hr', 'br', 'input']
             }
           ]
         },
         {
           questions: [
             {
-              type: "radiogroup",
-              name: "q2",
-              title: "De la ce vine HTML?",
-              choicesOrder: "random",
-              choices: [ "Horrible Themes, Mandatory Logic","Hyper Text Markup Language","Hyper Tension Making Language","High Level Machine Learning" ],
-              correctAnswer: "Hyper Text Markup Language"
+              type: 'radiogroup',
+              name: 'q2',
+              title: 'De la ce vine HTML?',
+              choicesOrder: 'random',
+              choices: ['Horrible Themes, Mandatory Logic', 'Hyper Text Markup Language', 'Hyper Tension Making Language', 'High Level Machine Learning'],
+              correctAnswer: 'Hyper Text Markup Language'
             }
           ]
         },
@@ -59,19 +81,23 @@ export class IntroSurveyComponent implements OnInit {
           //maxTimeToFinish: 15,
           questions: [
             {
-              type: "radiogroup",
-              name: "q3",
-              title: "Un fisier in format html trebuie sa contina obligatoriu:",
-              choicesOrder: "random",
-              choices: [ "Title si body", "Body si Head", "Body si paragrafe", "Paragrafe si imagini" ],
-              correctAnswer: "Body si head"
+              type: 'radiogroup',
+              name: 'q3',
+              title: 'Un fisier in format html trebuie sa contina obligatoriu:',
+              choicesOrder: 'random',
+              choices: ['Title si body', 'Body si Head', 'Body si paragrafe', 'Paragrafe si imagini'],
+              correctAnswer: 'Body si head'
             }
           ]
         }
       ],
-      completedHtml: "<h4>Ati raspuns corect la  <b>{correctedAnswers}</b> intrebari din <b>{questionCount}</b>.</h4>"
+      completedHtml: '<h4>Ati raspuns corect la  <b>{correctedAnswers}</b> intrebari din <b>{questionCount}</b>.</h4>',
+
+
     };
     const survey = new Survey.Model(json);
+    Survey.SurveyNG.render("surveyElement", { model: survey });
+
 
     /*survey
       .onComplete
@@ -122,7 +148,7 @@ export class IntroSurveyComponent implements OnInit {
         header.appendChild(span);
       });*/
 
-    Survey.SurveyNG.render("surveyElement", { model: survey });
+
 
   }
 

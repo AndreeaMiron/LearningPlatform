@@ -1,0 +1,107 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#5B979A',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+
+<div id="id1">
+  <p class="p2">A transforma (a mapa) o imagine intr-o harta sa refera la a atasa anumitor zone ale unei imagini proprietatea de a ne conduce spre o pagina web.
+    De exemplu, imaginati-va o poza cu un cerc si un patrat. In momentul in care apasati pe cerc, veti fi directionati pe pagina de la Google, iar apasand pe patrat, veti fi redirectionati pe o alta pagina.
+    Imaginile,pot avea trei forme: </p>
+  <ul>
+    <li><p class="p2"><span>Dreptunghiulara</span></p></li>
+    <li><p class="p2"><span>Circulara</span></p></li>
+    <li><p class="p2"><span>Poligonala</span></p></li>
+  </ul>
+  <img src="assets/geometric.png" style="width: 300px;height: 300px;margin-top:-250px;margin-left:950px;">
+
+</div>
+<br><br>
+<div id="id2">
+<h2>Pasi:</h2>
+  <p class="p2">1. Alegeti o imagine cu numeroase forme geometrice</p>
+  <p class="p2">2. Alegeti prima forma de pe imagine pe care doriti sa o mapati</p>
+  <p class="p2">3.Salvati coordonatele imaginii.Acestea pot fi vizualizate folosind liniarul din paint.</p>
+</div>
+<br><br>
+
+<div id="id3">
+  <p class="p2">Pentru cele trei tipuri de forme de mai sus,aveti nevoie de coordonate diferite:
+  <ul style="list-style-tipe:circle;font-size:15px;margin-left:60px">
+    <li>Formele rectangulare: coltul din stanga sus->coltul din dreapta jos->coltul din dreapta sus->coltul din stanga jos(cand veti scrie coordonatele,le veti scrie doar pe cele din coltul stanga sus si cel din dreapta jos,fara aproximari)</li>
+    <li>Formele circulare: centrul->raza</li>
+    <li>Formele de tip poligon: colturile fiecarei laturi</li>
+  </ul>
+  <p class="p2">Coordonatele vor fi afisate in stanga jos,modificandu-se de fiecare data cand mutati mouse-ul pe poza</p>
+  <img src="assets/p61.png" style="margin-left:100px;">
+</div>
+
+  <div id="id4">
+    <p class="p2">4.Afisati imaginea pe pagina web, iar in interiorul tagului src ,veti adauga atributul <span>usemap</span> caruia ii veti adauga un nume sugestiv,
+      precedat de "#".Ex: <span>< imgsrc="lego.png" usemap="#lego">" </span></p>
+    <p class="p2">5.Dupa ce ati adaugat imaginea,veti adauga tagul <span>< map ></span> dupa care ii veti da numele pe care l-ati hotarat mai sus: <span>
+    < map name="lego" ></span>. Retineti ca aveti nevoie de tagul map pentru a crea imaginea de tip harta!</p>
+    <p class="p2"></p>
+  </div>
+<br><br>
+
+  <div id="id5">
+    <p class="p2">6.Acum vom incepe sa folosim coordonatele: Alegeti prima forma din imagine,apoi stabiliti in care dintre cele 3 categorii se incadreaza</p>
+    <p class="p2">7.Adaugam tagurile corespunzatoare formelor: <span>< area shape="rect(sau poly ori circle)" coords="x,y"
+    href="linkul spre care doriti sa fiti condusi"</span></p>
+    <p class="p2">8.Nu uitati sa inchideti tagul map</p>
+
+  </div>
+  <p class="p2" style="margin-left:100px;margin-top: -280px;">Acum ca am vazut care sunt pasii ,haideti sa vedem ce se intampla:</p>
+  <img src="assets/lego.jpg" usemap="#lego" style="margin-left:100px">
+      <map name="lego">
+        <area shape="rect" coords="20,50,91,149" href="https://www.google.ro/search?q=blue&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiv3ZWV_6LaAhXCY1AKHaCnB6AQ_AUICigB&biw=1366&bih=613" target="_blank">
+        <area shape="rect" coords="95,48,177,150" href="https://www.google.ro/search?biw=1366&bih=613&tbm=isch&sa=1&ei=fQPGWpi4HcHQkwWkm4DYAw&q=red&oq=red&gs_l=psy-ab.3..0i67k1j0j0i67k1l2j0j0i67k1j0l4.12217.12752.0.12983.4.4.0.0.0.0.92.258.3.4.0....0...1c.1.64.psy-ab..0.3.257.0...71.UoBvb3fW5Xg" target="_blank">
+        <area shape="rect" coords="175,49,259,148" href="https://www.google.ro/search?biw=1366&bih=613&tbm=isch&sa=1&ei=iwPGWo_bE4XekgWI8r2wCQ&q=orange&oq=orange&gs_l=psy-ab.3..0i67k1l2j0l2j0i67k1l2j0l4.11242.12756.0.13278.7.6.0.1.1.0.91.422.5.6.0....0...1c.1.64.psy-ab..0.6.429.0...74.NLrWc-UKCT4" target="_blank">
+        <area shape="rect" coords="251,46,342,148" href="https://www.google.ro/search?biw=1366&bih=613&tbm=isch&sa=1&ei=oAPGWq-NKdGRkwXJ-7HwCA&q=yellow&oq=yellow&gs_l=psy-ab.3..0i67k1j0j0i67k1l2j0l2j0i67k1j0l3.14271.15702.0.15836.7.5.0.2.2.0.89.337.4.5.0....0...1c.1.64.psy-ab..0.6.351.0...72.4gH-SgLa7Os" target="_blank">
+      </map>
+
+
+<div id="display">
+      <p class="p2">Aveti mai jos si codul scris,in caz ca nu va descurcati:</p>
+      <div id="displayIcon" *ngIf="displayIcon">
+      <button style="margin-left:420px;margin-top: -120px;" (click)="displayFunction()"><mat-icon>keyboard_arrow_down</mat-icon></button>
+
+        <div *ngIf="display">
+        <ol>
+      <span >< img src="lego.jpg" usemap="#lego" style="margin-left:100px"></span><br>
+      <span >< map name="lego"></span><br><br>
+      <span >< area shape="rect" coords="20,50,91,149" href="link spre pagina de culoare albastra" target="_blank"></span><br>
+      <span >< area shape="rect" coords="95,48,177,150" href="link spre pagina de culoare rosie" target="_blank"></span><br>
+      <span >< area shape="rect" coords="175,49,259,148" href="link spre pagina de culoare portocalie" target="_blank"></span><br>
+      <span >< area shape="rect" coords="251,46,342,148" href="link spre pagina de culoare galbena" target="_blank"></span><br>
+      <span >< / map></span>
+        </ol>
+      </div>
+</div>
+
+  <br><br>
+  </div>
+
+
+</div>

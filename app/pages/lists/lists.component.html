@@ -1,0 +1,93 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+
+  <img src="assets/p45.png" style="margin-left:950px">
+
+  <div id="id1">
+    <div  id="top1">
+      <p class="etichete" style="margin-top: 20px;">Liste neordonate</p>
+    </div>
+    <p class="p2">O lista neordonata trebuie declarata cu tagul <span>< ul ></span>. Fiecare punct din acea lista, numit item,va fi cuprins intre tagurile:  <span>< li > Item < / li ></span>.
+      Elementele din lista vor fi marcate cu mici punctulete negre, care pot fi schimbate cu alte simboluri. Pentru a face acest lucru veti adauga extensia style in interiorul tagului ul: </p>
+    <img src="assets/p46.png" style="margin-left:35px">
+  </div>
+
+
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;">Liste ordonate</p>
+    </div>
+    <p class="p2">O lista ordonata trebuie declarata cu tagul <span>< ol ></span>. Aceasta poate avea numerotari de tipul <span>1, 2, 3,..</span> sau <span>a,b,c,..</span> sau <span>A,B,C,..</span>
+      sau <span>i,ii,iii,...</span> si multe altele. Numerotarea lor incepe de la o anumita valoare, in functie de tipul ales. Pentru a incepe numerotarea
+      de la un anumit numar, de exemplu 30 se va adauga secventa: <span> start="30"</span>, astfel numerotarea va fi de forma 30,31,32,..</p>
+  </div>
+
+
+  <br><hr><hr>
+
+  <div id="id3">
+    <div  id="top3">
+      <p class="etichete" style="margin-top: 20px;">●Liste descriptive</p>
+    </div>
+    <p class="p2">O lista descriptiva este o lista cu termeni,fiecare avand o descriere.Tagul <span>< dl ></span> defineste acest tip de lista,
+      tagul <span> < dt ></span> defineste termenul si tagul <span> < dd > </span> descrie termenul.</p>
+
+  </div>
+  <br><br>
+  <img src="assets/p47.png" style="margin-left: 50px;">
+
+  <div id="id4">
+    <div  id="top4">
+      <p class="etichete" style="margin-top: 20px;">●Liste combinate</p>
+    </div>
+    <ul>
+      <li>Cafea</li>
+      <li>Ceai
+        <ul>
+          <li>Ceai negru</li>
+          <li>Ceai verde</li>
+        </ul>
+      </li>
+      <li>Lapte</li>
+    </ul>
+    <p class="p2">Lista de mai sus este alcatuita de fapt din doua liste neordonate. A doua lista, care contine tipurile de ceai,
+      a fost adaugata in interiorul tagului li, care contine de fapt ceaiul.</p>
+
+  </div>
+
+  <div id="id5">
+    <div  id="top5">
+      <p class="etichete" style="margin-top: 20px;">●Liste orizontale (Meniu)</p>
+    </div>
+    <p class="p2">Pentru a vedea cum creezi o lista de tip meniu ,apasa <button mat-menu-item (click)="menu()"> aici </button> si vei fi redirectionat direct la sursa.</p>
+  </div>
+<br><br><br><br><br><br><br><br>
+
+</div>

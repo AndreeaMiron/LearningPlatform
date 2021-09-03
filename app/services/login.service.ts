@@ -8,6 +8,7 @@ import {CredentialsDTO} from '../model/CredentialsDTO';
 export class LoginService {
   baseURL = 'http://localhost:8080/auth/login';
   logoutURL = 'http://localhost:8080/auth/logout';
+  passwordURL = 'http://localhost:8080/auth/newpassword';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,5 +20,10 @@ export class LoginService {
 
   logout(connectedUser:string){
     return this.httpClient.post(this.logoutURL,connectedUser).subscribe();
+  }
+
+  changePassword(email: string, password: string){
+    let credentials = new CredentialsDTO(email, password);
+    return this.httpClient.post(this.passwordURL, credentials);
   }
 }

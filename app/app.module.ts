@@ -32,6 +32,14 @@ import { AgmCoreModule } from '@agm/core';
 import { CountdownComponent } from './pages/countdown/countdown.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import {DatePipe} from '@angular/common';
+import { BlocksComponent } from './pages/blocks/blocks.component';
+import { ClassesComponent } from './pages/classes/classes.component';
+import { TablesComponent } from './pages/tables/tables.component';
+import { ListsComponent } from './pages/lists/lists.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { MappingComponent } from './pages/mapping/mapping.component';
+import { SlideshowComponent } from './pages/slideshow/slideshow.component';
+import { ResetPassComponent } from './pages/reset-pass/reset-pass.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +55,15 @@ import {DatePipe} from '@angular/common';
     ColorsComponent,
     GoogleComponent,
     CountdownComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    BlocksComponent,
+    ClassesComponent,
+    TablesComponent,
+    ListsComponent,
+    MenuComponent,
+    MappingComponent,
+    SlideshowComponent,
+    ResetPassComponent
   ],
     imports: [
         BrowserModule,

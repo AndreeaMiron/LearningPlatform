@@ -1,20 +1,24 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-colors',
-  templateUrl: './colors.component.html',
-  styleUrls: [ './colors.component.css'
+  selector: 'app-blocks',
+  templateUrl: './blocks.component.html',
+  styleUrls: ['./blocks.component.css'
   ]
 })
-export class ColorsComponent implements OnInit {
+export class BlocksComponent implements OnInit {
   connectedUser:string;
   userLoggedIn:boolean=true;
+  url: string = "https://angular.io/api/router/RouterLink";
+  urlSafe: SafeResourceUrl;
+
   constructor(private router:Router,
               private route: ActivatedRoute,
-              @Inject(DOCUMENT) private document: Document) {
-
+              @Inject(DOCUMENT) private document: Document,
+              public sanitizer: DomSanitizer) {
     this.route.queryParams.subscribe(params => {
       this.connectedUser = params['id'];
       if(Number(this.connectedUser) > 0)
@@ -23,9 +27,11 @@ export class ColorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
   next(){
-    this.router.navigate(["/tables"],{
+    this.router.navigate(["/classes"],{
       queryParams: {id: this.connectedUser}
     });
   }
@@ -39,8 +45,9 @@ export class ColorsComponent implements OnInit {
     });
   }
   back(){
-    this.router.navigate(["/quotes"],{
+    this.router.navigate(["/lists"],{
       queryParams: {id: this.connectedUser}
     });
   }
+
 }

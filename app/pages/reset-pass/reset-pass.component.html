@@ -2,21 +2,24 @@
   <mat-card>
     <mat-card-title>Login</mat-card-title>
     <mat-card-content>
-      <form [formGroup]="loginForm" (submit)="login()">
+      <form [formGroup]="resetForm" (submit)="save()">
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" required>
         </mat-form-field>
+        <br>
         <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput formControlName="password" required>
+          <mat-label>New password</mat-label>
+          <input matInput formControlName="password1" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Confirm new password</mat-label>
+          <input matInput formControlName="password2" required>
         </mat-form-field>
         <br/>
-        <button mat-button type="submit">Login</button>
-        <button mat-button (click)="clickRegister()">Register</button>
-        <button mat-button (click)="resetPassword()">Forgot your password</button>
+        <button mat-button type="submit">Save</button>
       </form>
     </mat-card-content>
   </mat-card>
 </div>
-<div style="height: 350px;"></div>

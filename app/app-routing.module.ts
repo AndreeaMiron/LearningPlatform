@@ -13,6 +13,14 @@ import {ColorsComponent} from './pages/colors/colors.component';
 import {GoogleComponent} from './pages/google/google.component';
 import {CountdownComponent} from './pages/countdown/countdown.component';
 import {AdminPageComponent} from './pages/admin-page/admin-page.component';
+import {TablesComponent} from './pages/tables/tables.component';
+import {ListsComponent} from './pages/lists/lists.component';
+import {BlocksComponent} from './pages/blocks/blocks.component';
+import {ClassesComponent} from './pages/classes/classes.component';
+import {MenuComponent} from './pages/menu/menu.component';
+import {MappingComponent} from './pages/mapping/mapping.component';
+import {SlideshowComponent} from './pages/slideshow/slideshow.component';
+import {ResetPassComponent} from './pages/reset-pass/reset-pass.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -28,6 +36,15 @@ const routes: Routes = [
   {path: 'colors', component: ColorsComponent},
   {path: 'google', component: GoogleComponent},
   {path: 'countdown', component: CountdownComponent},
+  {path: 'tables', component: TablesComponent},
+  {path: 'lists', component: ListsComponent},
+  {path: 'blocks', component: BlocksComponent},
+  {path: 'classes', component: ClassesComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: 'mapping', component: MappingComponent},
+  {path: 'slideshow', component: SlideshowComponent},
+  {path: 'reset-pass', component: ResetPassComponent},
+
 ];
 
 @NgModule({

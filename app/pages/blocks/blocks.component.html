@@ -1,0 +1,79 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="left:-20%" aria-label="Buton quiz" (click)="quiz()">
+    <span style="color:black;font-size: 20px;">Test yourself</span>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#8A878B',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+
+  <p class="p2">Fiecare element HTML are o valoare implicita de afisare, care depinde de ce fel de element este.</p>
+  <p class="p2">Pentru majoritatea elementelor, aceasta este de tip BLOCK sau INLINE.</p>
+
+  <div id="id1">
+    <div  id="top1">
+      <p class="etichete" style="margin-top: 20px;">Block</p>
+    </div>
+
+    <p class="p2">Elementele cu o valoare de tip block vor incepe mereu pe o linie noua si vor ocupa intreaga latime posibila (se vor intinde de la stanga la dreapta pe cat de mult se poate). Elementul <span> < div ></span> este un astfel de element, de tip block. De asemenea,
+      pana si tagurile < h1 >-< h6 >,< p >,< ol>,< ul > sau < table > sunt astfel de elemente de tip block.</p>
+    <p class="p2">Elementul < div > se foloseste de obicei ca un "recipient" al altor elemente HTML.
+      Acesta nu are atribute, dar se pot adauga diferite proprietati, cu ajutorul tagului style, sau chiar clase ori id-uri.
+
+      Folosit impreuna cu CSS-ul, elementul < div > poate fi folosit pentru a stiliza diferite block-uri si continutul lor:</p>
+
+    <img src="assets/p48.png" >
+    <img src="assets/londra.png" style="margin-left:100px">
+  </div>
+
+
+  <div id="id2">
+    <div  id="top2">
+      <p class="etichete" style="margin-top: 20px;">Inline</p>
+    </div>
+    <p class="p2">Un element de tip inline nu incepe pe o linie noua, desi textul este scris pe linii diferite. Inauntrul unui paragraf, elementul < span > este de tip inline. Probabil ati observat anterior multe din cuvintele cheie
+      scoase in evidenta printr-o culoare diferita. Acest lucru a fost realizat cu ajutorul span-ului, caruia i-am atribuit culoarea alba. Span-ul va colora cu alb tot ce se afla intre el si desi cuvintele vor fi scrise pe randuri diferite, el le va afisa pe unul singur.</p>
+<p class="p2">Avem mai jos un exemplu prin care vom incerca sa coloram cu galben un cuvant: </p>
+
+  </div>
+  <img src="assets/p49.png" style="margin-top: -20px;margin-left: 750px;">
+
+<br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+
+<div id="iframe">
+  <h1 style="color:whitesmoke"><marquee behavior="scroll" direction="right" scrollamount="10"><ins>Iframe</ins></marquee></h1>
+  <p class="p2">Termenul de iframe e folosit pentru a afisa o pagina web in interiorul altei pagini web.Pentru a face acest lucru se utilizeaza tagul
+    <span>< iframe ></span> alaturi de atributul src ,care va defini adresa URL a paginii pe care doriti sa o afisati,de exemplu: </p>
+
+  <iframe width="100%" height="1200px;" frameBorder="1" allowfullscreenl [src]="urlSafe"></iframe>
+</div>
+<br><br>
+</div>

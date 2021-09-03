@@ -34,18 +34,24 @@ export class HeadComponent implements OnInit {
 
 
   next(){
-    this.router.navigate(["/paragraphs"]);
+    this.router.navigate(["/paragraphs"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   quiz(){
    // this.router.navigate(["/intro-survey"]);
   }
 
   home(){
-    this.router.navigate(["/student-page"]);
+    this.router.navigate(["/student-page"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   back(){
-    this.router.navigate(["/introduction"]);
+    this.router.navigate(["/introduction"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   metaFunction(){

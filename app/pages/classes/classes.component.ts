@@ -3,33 +3,28 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 
 @Component({
-  selector: 'app-attribute',
-  templateUrl: './attribute.component.html',
-  styleUrls: ['./attribute.component.css'
+  selector: 'app-classes',
+  templateUrl: './classes.component.html',
+  styleUrls: ['./classes.component.css'
   ]
 })
-export class AttributeComponent implements OnInit {
+export class ClassesComponent implements OnInit {
   connectedUser:string;
   userLoggedIn:boolean=true;
-
-
   constructor(private router:Router,
               private route: ActivatedRoute,
               @Inject(DOCUMENT) private document: Document) {
     this.route.queryParams.subscribe(params => {
-    this.connectedUser = params['id'];
-    if(Number(this.connectedUser) > 0)
-      this.userLoggedIn=true;
-  }); }
+      this.connectedUser = params['id'];
+      if(Number(this.connectedUser) > 0)
+        this.userLoggedIn=true;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  next(){
-    this.router.navigate(["/quotes"],{
-      queryParams: {id: this.connectedUser}
-    });
-  }
+
   quiz(){
     // this.router.navigate(["/intro-survey"]);
   }
@@ -40,8 +35,12 @@ export class AttributeComponent implements OnInit {
     });
   }
   back(){
-    this.router.navigate(["/paragraphs"],{
+    this.router.navigate(["/blocks"],{
       queryParams: {id: this.connectedUser}
     });
+  }
+
+  classVsId() {
+
   }
 }

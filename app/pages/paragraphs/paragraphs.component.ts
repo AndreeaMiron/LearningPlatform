@@ -26,7 +26,9 @@ export class ParagraphsComponent implements OnInit {
 
 
   next(){
-    this.router.navigate(["/attribute"]);
+    this.router.navigate(["/attribute"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   quiz(){
@@ -34,11 +36,15 @@ export class ParagraphsComponent implements OnInit {
   }
 
   home(){
-    this.router.navigate(["/student-page"]);
+    this.router.navigate(["/student-page"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   back(){
-    this.router.navigate(["/head"]);
+    this.router.navigate(["/head"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
 }

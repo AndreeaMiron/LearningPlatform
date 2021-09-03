@@ -1,5 +1,8 @@
 <mat-toolbar color=white *ngIf="userLoggedIn">
   <span class="simple-spacer"> </span>
+
+ <!-- <button  mat-icon-button style="left:-50%;" class="btn-primary" (click)="downloadAsPDF()">Export To PDF</button>-->
+
   <button mat-icon-button class="icon-spacer" aria-label="Buton next page" (click)="next()">
     <mat-icon>arrow_forward_ios</mat-icon>
   </button>
@@ -13,8 +16,10 @@
   </button>
 
 
+
+
 </mat-toolbar>
-<div  [ngStyle]="{backgroundColor:'#8A878B',
+<div id="pdf" #pdf [ngStyle]="{backgroundColor:'#8A878B',
 backgroundSize:'cover',
 backgroundRepeat:'no-repeat',
 backgroundPosition:'center'
@@ -77,6 +82,8 @@ backgroundPosition:'center'
 
 
 -->
+  <br>
+
   <div class="scroll-css-class">
     <ng-content select="[scroll]"></ng-content>
   </div>

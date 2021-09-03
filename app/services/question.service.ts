@@ -4,6 +4,7 @@ import {ForumQuestion} from '../model/ForumQuestion';
 import {QuestionCredentials} from '../model/QuestionCredentials';
 import {Observable} from 'rxjs';
 import {ResponseCredentials} from '../model/ResponseCredentials';
+import {User} from '../model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class QuestionService {
     return this.httpClient.get<ForumQuestion[]>(this.getUrl);
   }
 
+  findAllUsersWithQuestions(){
+    return this.httpClient.get<User[]>(this.baseUrl);
+  }
+
   deleteQuestion(id:number):Observable<Object>{
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
@@ -29,5 +34,10 @@ export class QuestionService {
   sendResponse(id: number, response: string) {
     let credentials=new ResponseCredentials(id,response);
     return this.httpClient.put(this.baseUrl,credentials);
+  }
+
+  findMyQuestions(connectedUser: string) {
+    return this.httpClient.get<ForumQuestion[]>(this.baseUrl+"/myquestions"+connectedUser);
+
   }
 }

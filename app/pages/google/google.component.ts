@@ -33,11 +33,15 @@ export class GoogleComponent implements OnInit {
   }
 
   next(){
-    this.router.navigate(["/countdown"]);
+    this.router.navigate(["/countdown"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   home(){
-    this.router.navigate(["/student-page"]);
+    this.router.navigate(["/student-page"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   dictFunction(){

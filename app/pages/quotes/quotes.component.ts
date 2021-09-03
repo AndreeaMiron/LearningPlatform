@@ -25,16 +25,22 @@ export class QuotesComponent implements OnInit {
   }
 
   next(){
-    this.router.navigate(["/colors"]);
+    this.router.navigate(["/colors"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   quiz(){
     // this.router.navigate(["/intro-survey"]);
   }
 
   home(){
-    this.router.navigate(["/student-page"]);
+    this.router.navigate(["/student-page"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
   back(){
-    this.router.navigate(["/attribute"]);
+    this.router.navigate(["/attribute"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 }

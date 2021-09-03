@@ -1,0 +1,167 @@
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+  <button mat-icon-button class="icon-spacer"  aria-label="Buton next page" (click)="next()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+<div  [ngStyle]="{backgroundColor:'#85C1E9',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <br><br>
+  <div id ="id1">
+<div style="width:400px;">
+    <p class="p2">
+      1.Creati un folder in care veti salva toate informatiile si pozele pe care le folositi pentru crearea paginii
+    </p>
+    <p class="p2">
+      2.Alegeti o imagine de fundal,dupa care o mutati in folder
+    </p>
+  <p class="p2">
+    3.Deschideti editorul in care lucrati si scrieti componentele de baza ale paginii:
+  </p>
+    </div>
+    <img src="assets/p53.png" style="margin-left:450px;margin-top: -230px;">
+  </div>
+
+  <br><br><br>
+
+  <div id ="id2">
+    <div style="width:500px;">
+      <p class="p2">
+        4.Creati un block,mai exact un div ,caruia ii acordati o clasa cu un nume sugestiv,de exemplu "menu".In interiorul div-ului creati
+        o lista neordonata cu elementele pe care doriti sa le contina meniul dumneavoastra.De asemenea,puteti adauga o alta lista in cea principala,
+        pentru a crea submeniuri.Nu uitati
+        ca elementele din lista sa fie de tip link,deci sa fie intre tagurile <span>< a >< / a></span>.
+      </p>
+      <p class="p2">
+        5.Salvati pagina de tip document html
+      </p>
+      <p class="p2">
+        6.In head,creati tagul <span>< style ></span>
+      </p>
+    </div>
+    <img src="assets/p54.png" style="margin-left:450px;margin-top: -230px;">
+  </div>
+<br><br><br>
+
+  <div class="menu">
+    <ul>
+      <li>
+        <a href="#">Acasa</a>
+      </li>
+      <li>
+        <a href="#">Blog</a>
+      </li>
+      <li>
+        <a href="#">Noutati</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <br><br><br>
+  <div id ="id3">
+    <div style="width:500px;">
+      <p class="p2">
+       7.In interiorul acestui tag ,veti crea meniul folosind CSS.In primul rand,creati fundalul paginii:
+      </p>
+      <br>
+      <br>
+
+      <img src="assets/p55.png" style="margin-left:450px;margin-top: -230px;">
+      <p class="p2">
+        8.Acum va urma sa ne ocupam de meniu:
+      </p>
+      <img src="assets/p56.png" style="margin-left:450px;margin-top: -230px;">
+    </div>
+  </div>
+
+  <div class="menu1">
+    <ul>
+      <li>
+        <a href="#">Acasa</a>
+      </li>
+      <li>
+        <a href="#">Blog</a>
+      </li>
+      <li>
+        <a href="#">Noutati</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <br><br><br>
+
+  <div id="id4">
+
+    <p class="p2">
+      9.Vom face ca lista sa nu aiba nici un fel de simbol si o pozitie absoluta:
+    </p>
+    <img src="assets/p57.png" style="margin-left:450px;">
+    <p class="p2">
+      10.Ne vom ocupa de cum va fi afisata lista:
+    </p>
+    <img src="assets/p58.png" style="margin-left:150px;">
+    <p class="p2">
+      11.Ultima parte din stilizarea listei:
+    </p>
+    <img src="assets/p59.png" style="margin-left:50px;">
+  </div>
+
+
+    <div id="id5">
+      <div  id="top5">
+        <p class="etichete">
+          <img src="assets/monophy.gif" style="width:60px;height: 60px;">
+        </p>
+      </div>
+
+    <p class="p2">
+      Pentru a face meniul transparent,in interiorul lui <span>.menu</span> adaugati: <span>opacity:0.6;</span>.<br>
+      Puteti incerca in loc de 6 alta cifra,pentru a vedea diferentele.
+    </p>
+<p class="p2">
+  Daca doriti ca apasand pe unul dintre elementele meniului sa fiti condus spre o alta pagina web pe care o veti crea, <br>
+  atunci dupa href, in loc de # veti adauga numele paginii urmat de extensia ".html".
+</p>
+    </div>
+
+  <br><br><br>
+  <div class="menu2">
+    <ul id="ul1">
+      <li class="li1">
+        <a href="#">Acasa</a>
+      </li>
+      <li class="li1">
+        <a href="#">Blog</a>
+      </li>
+      <li class="li1">
+        <a href="#">Noutati</a>
+      </li>
+      <li class="li1">
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <br><br><br>
+
+</div>
