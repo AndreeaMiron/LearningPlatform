@@ -55,7 +55,7 @@ public class LoginServiceImpl implements LoginService {
 
         if(passwordEncoder.matches(dto.getPassword(),user.getPassword()))
         { hm.put(user.getId(),1);
-            System.out.println("S a logat cineva");
+            //System.out.println("S a logat cineva");
             return response;
         }
 
@@ -69,7 +69,7 @@ public class LoginServiceImpl implements LoginService {
     }
     @Override
     public boolean logout(String dto){
-        //hm.replace(Long.parseLong(dto),1,-1);
+        hm.replace(Long.parseLong(dto),1,-1);
         return true;
     }
 
@@ -89,5 +89,15 @@ public class LoginServiceImpl implements LoginService {
         return false;
     }
 
+    public int findNrOfUsers() {
+        int nr=0;
+        for (Map.Entry<Long, Integer> entry : hm.entrySet()) {
+            if(entry.getValue()!=-1)
+                nr++;
+        }
+
+        nr--;
+        return nr;
+    }
 
 }

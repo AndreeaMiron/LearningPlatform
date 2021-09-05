@@ -31,5 +31,8 @@ public class LoginController {
     public ResponseEntity changePassReq(@RequestBody CredentialsDTO dto) throws ApiExceptionResponse {
         return ResponseEntity.status(HttpStatus.OK).body(loginService.changePassword(dto));
     }
-
+    @GetMapping("/connected-users")
+    public ResponseEntity findNrOfUsers(){
+        return ResponseEntity.status(HttpStatus.OK).body(loginService.findNrOfUsers());
+    }
 }
