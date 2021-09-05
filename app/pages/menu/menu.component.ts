@@ -23,11 +23,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  next(){
-    this.router.navigate(["/slideshow"],{
-      queryParams: {id: this.connectedUser}
-    });
-  }
+
 
   home(){
     this.router.navigate(["/student-page"],{

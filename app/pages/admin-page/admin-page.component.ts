@@ -9,6 +9,7 @@ import {ForumQuestion} from '../../model/ForumQuestion';
 import {QuestionService} from '../../services/question.service';
 import {User} from '../../model/User';
 import {UserService} from '../../services/user.service';
+import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
@@ -26,6 +27,7 @@ export class AdminPageComponent implements OnInit {
   showEdit:boolean=false;
   show:boolean=false;
   notshow:boolean=true;
+  nrOfUsers: Subscription ;
 
 
   constructor( private formBuilder:FormBuilder,
@@ -71,6 +73,7 @@ export class AdminPageComponent implements OnInit {
 
     this.initQuestionsForm();
     this.subscribeToNotifications();
+    this.initNrOfUsers();
   }
   initQuestionsForm(){
     this.questions=this.formBuilder.group({
@@ -78,8 +81,15 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+
   get response(){
     return this.responseForm.get('response');
+  }
+
+  initNrOfUsers(){
+    this.loginService.findNrOfUsers().subscribe((res:any)=>{
+      this.nrOfUsers=res;
+    });
   }
   subscribeToNotifications(){
     const URL="http://localhost:8080/socket";

@@ -1,0 +1,92 @@
+.icon-spacer {
+  padding: 0 14px;
+  position: absolute;
+  left: 90%;
+}
+
+.simple-spacer {
+  flex: 1 1 auto;
+}
+.p2{font-size:15px;
+  color:black;
+  text-indent: 45px;
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+span {color:whitesmoke;
+}
+
+.etichete{
+  font-family: cursive;
+  color:black;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.stanga{
+  border:5px solid white;
+  width: 350px;
+  height: 300px;
+  margin-top: 90px;
+  margin-left: 150px;
+
+}
+
+.topdiv{
+  width: 345px;
+  height: 50px;
+  color:white;
+  background-color: white;
+  border:5px solid white;
+}
+
+
+.clasa{
+  width: 295px;
+  height: 50px;
+  background-color: white;
+  border:5px solid white;
+}
+.exempluClasa{
+  width: 400px;
+  height: 300px;
+  border:5px solid white;
+  margin-left: 300px;
+}
+
+
+.dreapta{
+  position:static;
+  border:5px solid white;
+  width: 440px;
+  height: 400px;
+  margin-left: 820px;
+
+}
+
+.topdiv2{
+  width: 435px;
+  height: 50px;
+  color:white;
+  background-color: white;
+  border:5px solid white;
+}
+
+
+#idDemo{
+  width:400px;
+  height:100px;
+  margin-left: 300px;
+}
+
+
+#diferenta{
+  width:600px;
+  height:350px;
+  text-align: center;
+  margin-left: 450px;
+  border:5px solid black;
+}

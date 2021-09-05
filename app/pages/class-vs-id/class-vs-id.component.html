@@ -1,0 +1,93 @@
+
+<mat-toolbar color=white *ngIf="userLoggedIn">
+  <span class="simple-spacer"> </span>
+
+  <button mat-icon-button  style="left:-95%" aria-label="Buton home" (click)="home()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button style="padding: 0 14px;
+  position: absolute;
+  left: 70%;"  aria-label="Buton last page" (click)="back()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div  [ngStyle]="{backgroundColor:'#9D9F9E',
+backgroundSize:'cover',
+backgroundRepeat:'no-repeat',
+backgroundPosition:'center'
+}" >
+  <br>
+  <div class="stanga">
+    <div class="topdiv"><p class="etichete"> Class </p></div>
+    <p class="p2">JavaScript poate accesa elemente cu o clasa specificata folosind functia/metoda "<span>getElementsByClassName()</span>".</p>
+    <p class="p2"> Deci,pentru elementele de mai jos,puteti observa ca al doilea paragraf, primul si al treilea head au clasa "culoare",
+      deci ele vor fi cele ascunse. Exemplul este urmatorul:</p>
+  </div>
+  <img src="assets/p99.png" style="margin-left:55%;margin-top: -300px;">
+
+  <div class="exempluClasa">
+  <table style="align:center;padding:0; width:50%;margin-left:20%;">
+
+    <div *ngIf="isShown"  class="clasa" >
+    <tr><td><h2 class="culoare">Rosu</h2>
+    </td>
+    </tr>
+    </div>
+    <p>Rosu simbolizeaza caldura, foc.</p>
+
+    <tr><td><h2 class="albastru">Albastru</h2>
+      <div *ngIf="isShown"  class="clasa" >
+      <p class="culoare">Albastrul reprezinta singuratate, tristete.</p>
+      </div>
+    </td></tr>
+
+    <div *ngIf="isShown"  class="clasa" >
+    <tr><td><h2 class="culoare">Galben</h2>
+    </td></tr>
+    </div>
+    <p>Galbenul simbolizeaza lumina, creativitate.</p>
+    <tr><td> Apasati pe <button mat-button (click)="toggleShow()">Ascunde</button> pentru a vedea ce se intampla</td></tr>
+
+  </table>
+</div>
+
+  <br><br><br>
+<div id="diferenta">
+  <p class="p2">
+      Pe o pagina web, mai multe elemente pot face parte din aceeasi clasa. Adica, <span>putem avea n elemente care sa primeasca class="Clasa".
+    </span>
+  </p>
+
+  <p class="p2">
+    Diferenta fata de id-uri se refera la faptul ca pe o pagina web <span>putem avea n elemente care sa primeasca un id, dar fiecare nume pentru id-ul respectiv
+    trebuie sa fie diferit, de exemplu id1, id2, id3 etc.
+    </span>
+  </p>
+  <img src="assets/pc.gif">
+</div>
+  <br><br>
+  <br><br>
+  <br><br>
+
+
+  <div class="dreapta">
+    <div class="topdiv2"><p class="etichete"> Id </p></div>
+    <p class="p2">JavaScript poate accesa un element cu un id specific folosind functia/metoda "<span>getElementById()</span>".
+      Atributul id se foloseste alaturi de JavaScript pentru "a manipula" textele.Vedeti mai jos un exemplu:</p><br>
+    <p class="p2">Astfel,in momentul in care apasam pe buton,el face legatura cu functia getElementById,care schimba textele care au id-ul
+      Header in ceea ce atribuim variabilei document.getElementById("numeleidului").innerHTML.Vedeti mai jos cum functioneaza: </p>
+
+  </div>
+  <img src="assets/p98.png" style="margin-left: 50px;margin-top: -500px;">
+
+
+<div id="idDemo">
+  <h1 id="Header" style="text-align:center;">Salut!</h1>
+  <button (click)="displayResult()">Schimba textul</button>
+</div>
+
+</div>
+

@@ -9,6 +9,7 @@ export class LoginService {
   baseURL = 'http://localhost:8080/auth/login';
   logoutURL = 'http://localhost:8080/auth/logout';
   passwordURL = 'http://localhost:8080/auth/newpassword';
+  connectedUsersURL:string="http://localhost:8080/auth/connected-users";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,5 +26,9 @@ export class LoginService {
   changePassword(email: string, password: string){
     let credentials = new CredentialsDTO(email, password);
     return this.httpClient.post(this.passwordURL, credentials);
+  }
+
+  findNrOfUsers(){
+    return this.httpClient.get<string>(this.connectedUsersURL);
   }
 }

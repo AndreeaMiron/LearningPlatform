@@ -29,7 +29,9 @@ export class ListsComponent implements OnInit {
     });
   }
   quiz(){
-    // this.router.navigate(["/intro-survey"]);
+    this.router.navigate(["/quiz"],{
+      queryParams: {id: this.connectedUser}
+    });
   }
 
   home(){

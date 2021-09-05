@@ -12,7 +12,7 @@ import {LoginService} from '../../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   connectedUser: string;
-
+  nrOfUsers:number ;
 
   constructor(private formBuilder: FormBuilder,
               private service: LoginService,
@@ -58,7 +58,9 @@ export class LoginComponent implements OnInit {
     }, (_error) => {
       alert('Invalid username or password');
     });
-
+    this.service.findNrOfUsers().subscribe((res:any)=>{
+      this.nrOfUsers=res;
+    });
   }
 
   clickRegister(){

@@ -7,7 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -17,11 +17,11 @@ import { StudentPageComponent } from './pages/student-page/student-page.componen
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RequestInterceptorService} from './services/request-interceptor.service';
-import {MatTableModule} from '@angular/material/table';
+
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { IntroductionComponent } from './pages/introduction/introduction.component';
-import { IntroSurveyComponent } from './pages/intro-survey/intro-survey.component';
+
 import { HeadComponent } from './pages/head/head.component';
 import { ParagraphsComponent } from './pages/paragraphs/paragraphs.component';
 import { AttributeComponent } from './pages/attribute/attribute.component';
@@ -38,8 +38,11 @@ import { TablesComponent } from './pages/tables/tables.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MappingComponent } from './pages/mapping/mapping.component';
-import { SlideshowComponent } from './pages/slideshow/slideshow.component';
 import { ResetPassComponent } from './pages/reset-pass/reset-pass.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
+import { QuizComponent } from './pages/quiz/quiz.component';
+import {BackgroundDirective} from './services/BackgroundDirective';
+import { ClassVsIdComponent } from './pages/class-vs-id/class-vs-id.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,6 @@ import { ResetPassComponent } from './pages/reset-pass/reset-pass.component';
     RegisterComponent,
     StudentPageComponent,
     IntroductionComponent,
-    IntroSurveyComponent,
     HeadComponent,
     ParagraphsComponent,
     AttributeComponent,
@@ -62,8 +64,10 @@ import { ResetPassComponent } from './pages/reset-pass/reset-pass.component';
     ListsComponent,
     MenuComponent,
     MappingComponent,
-    SlideshowComponent,
-    ResetPassComponent
+    ResetPassComponent,
+    QuizComponent,
+    BackgroundDirective,
+    ClassVsIdComponent
   ],
     imports: [
         BrowserModule,
@@ -84,6 +88,7 @@ import { ResetPassComponent } from './pages/reset-pass/reset-pass.component';
         MatToolbarModule,
         MatMenuModule,
         MatListModule,
+        SlideshowModule,
 
         /*
         MatListModule,

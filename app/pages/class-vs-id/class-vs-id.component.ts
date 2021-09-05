@@ -3,14 +3,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 
 @Component({
-  selector: 'app-quotes',
-  templateUrl: './quotes.component.html',
-  styleUrls: ['./quotes.component.css'
+  selector: 'app-class-vs-id',
+  templateUrl: './class-vs-id.component.html',
+  styleUrls: ['./class-vs-id.component.css'
   ]
 })
-export class QuotesComponent implements OnInit {
+export class ClassVsIdComponent implements OnInit {
   connectedUser:string;
   userLoggedIn:boolean=true;
+  isShown: boolean;
   constructor(private router:Router,
               private route: ActivatedRoute,
               @Inject(DOCUMENT) private document: Document) {
@@ -22,18 +23,9 @@ export class QuotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isShown=true;
   }
 
-  next(){
-    this.router.navigate(["/colors"],{
-      queryParams: {id: this.connectedUser}
-    });
-  }
-  quiz(){
-    this.router.navigate(["/quiz"],{
-      queryParams: {id: this.connectedUser}
-    });
-  }
 
   home(){
     this.router.navigate(["/student-page"],{
@@ -41,8 +33,16 @@ export class QuotesComponent implements OnInit {
     });
   }
   back(){
-    this.router.navigate(["/attribute"],{
+    this.router.navigate(["/classes"],{
       queryParams: {id: this.connectedUser}
     });
   }
+  toggleShow() {
+    this.isShown=!this.isShown;
+  }
+
+   displayResult() {
+    document.getElementById("Header").innerHTML = "Sa ai o zi frumoasa!";
+  }
+
 }
